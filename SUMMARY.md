@@ -13,5 +13,5 @@
   * [1.7-Scrapy及部分插件的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/16-scrapyji-bu-fen-cha-jian-de-an-zhuang.md)
   * [1.8-部署相关库的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang.md)
     * [1.8.1-Scrapyd及其拓展的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/181-scrapydji-qi-tuo-zhan-de-an-zhuang-shi-yong.md)
-    * [11111111](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/11111111.md)
+    * [1.8.2 Docker的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/11111111.md)
 
