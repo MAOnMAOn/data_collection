@@ -14,4 +14,5 @@
   * [1.8-部署相关库的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang.md)
     * [1.8.1-Scrapyd及其拓展的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/181-scrapydji-qi-tuo-zhan-de-an-zhuang-shi-yong.md)
     * [1.8.2 Docker的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/11111111.md)
+* [第二章 爬虫网络基础](di-er-zhang-pa-chong-wang-luo-ji-chu.md)
 
