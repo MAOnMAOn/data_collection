@@ -1,4 +1,4 @@
-## 3.4 并发编程之multiprocessing
+## 3.5 并发编程之multiprocessing
 
 之前我们介绍了 Python3 下的 _thread 多线程库的使用。并说明了一点：python中的多线程其实并不是真正的多线程，并不能做到充分利用多核CPU资源。如果想要充分利用，在python中大部分情况需要使用多进程，那么这个包就叫做 multiprocessing。
 
