@@ -12,4 +12,5 @@
     * [1.5.1-虚拟环境安装与Django使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/15-webku-an-zhuang/151xu-ni-huan-jing-an-zhuang-yu-django-shi-yong.md)
   * [1.7-Scrapy及部分插件的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/16-scrapyji-bu-fen-cha-jian-de-an-zhuang.md)
   * [1.8-部署相关库的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang.md)
+    * [1.8.1-Scrapyd及其拓展的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/181-scrapydji-qi-tuo-zhan-de-an-zhuang-shi-yong.md)
 
