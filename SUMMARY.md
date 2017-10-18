@@ -19,4 +19,5 @@
   * [2.2-HTTPS的简单原理](di-er-zhang-pa-chong-wang-luo-ji-chu/22-httpsde-jian-dan-yuan-li.md)
   * [2.3-TCP协议](di-er-zhang-pa-chong-wang-luo-ji-chu/23-tcpxie-yi.md)
   * [2.4-Web前端基础](di-er-zhang-pa-chong-wang-luo-ji-chu/22-webqian-duan-ji-chu.md)
+  * [2.5-代理基本原理](di-er-zhang-pa-chong-wang-luo-ji-chu/25dai-li-ji-ben-yuan-li.md)
 
