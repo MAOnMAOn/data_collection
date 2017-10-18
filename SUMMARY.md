@@ -10,4 +10,5 @@
     * [1.4.1-安装储存库](di-yi-zhang-kai-fa-huan-jing-pei-zhi/14an-zhuang-shu-ju-ku/141an-zhuang-chu-cun-ku.md)
   * [1.5-Web库安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/15-webku-an-zhuang.md)
     * [1.5.1-虚拟环境安装与Django使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/15-webku-an-zhuang/151xu-ni-huan-jing-an-zhuang-yu-django-shi-yong.md)
+  * [1.6-Scrapy及部分插件的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/16-scrapyji-bu-fen-cha-jian-de-an-zhuang.md)
 
