@@ -65,7 +65,11 @@ Cookie，有时也用其复数形式 Cookies，指某些网站为了辨别用户
 所以 Cookies 和 Session ，一个处于客户端，一个处于服务端，二者共同协作，就实现了登录会话控制。
 
 ***属性结构***
-这里以知乎为例，在浏览器开发者工具中打开 Application 选项卡，然后在左侧会有一个 Storage 部分，最后一项即为 Cookies，将其点开，可以看到 Cookies 有一个个条目，每个条目我们可以称之为 Cookie，取单数形式。它有这么几个属性：
+这里以知乎为例，在浏览器开发者工具中打开 Application 选项卡，然后在左侧会有一个 Storage 部分，最后一项即为 Cookies，将其点开：
+
+![](/assets/cookieandsession.png)
+
+可以看到 Cookies 有一个个条目，每个条目我们可以称之为 Cookie，取单数形式。它有这么几个属性：
 
  - Name，即该 Cookie 的名称。Cookie 一旦创建，名称便不可更改
  - Value，即该 Cookie 的值。如果值为 Unicode 字符，需要为字符编码。如果值为二进制数据，则需要使用 BASE64 编码。
