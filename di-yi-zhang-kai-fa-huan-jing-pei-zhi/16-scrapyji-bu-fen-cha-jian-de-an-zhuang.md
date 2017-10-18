@@ -84,7 +84,7 @@ ScrapyRedis 是 Scrapy 分布式的扩展模块，有了它我们可以方便地
 `pip3 install scrapy-redis`
 
 #### （2）Wheel安装
-也可以到 PyPi 下载 Wheel 文件安装：https://pypi.python.org/pypi/scrapy-redis#downloads，比如我们选取版本 0.6.8，则可以下载 scrapy_redis-0.6.8-py2.py3-none-any.whl，然后 Pip 安装即可。
+也可以到 PyPi 下载 Wheel 文件安装：https://pypi.python.org/pypi/scrapy-redis#downloads ，比如我们选取版本 0.6.8，则可以下载 scrapy_redis-0.6.8-py2.py3-none-any.whl，然后 Pip 安装即可。
 
 `pip3 install scrapy_redis-0.6.8-py2.py3-none-any.whl`
 
@@ -102,8 +102,8 @@ $ python3
 #### （1）Scrapy 文档
 官方网站：https://scrapy.org
 官方文档：https://docs.scrapy.org
-PyPi：https://pypi.python.org/pypi/Scrapy
-GitHub：https://github.com/scrapy/scrapy
+PyPi：   https://pypi.python.org/pypi/Scrapy
+GitHub： https://github.com/scrapy/scrapy
 中文文档：http://scrapy-chs.readthedocs.io
 
 #### （2）ScrapySplash 文档
