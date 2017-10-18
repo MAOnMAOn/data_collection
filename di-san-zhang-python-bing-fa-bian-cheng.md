@@ -59,12 +59,12 @@
 
 ### （4）几个 Python 并行编程模块
 #### threading模块
-Python的threading模块提供了一个抽象层次的模块_thread，这是一个低层次的模块。当开发一个基于线程的并行系统的艰巨任务时，它为程序员提供了一些函数来帮助程序员的开发。线程模块的官方文档可以在 <http://docs.python.org/3/library/
-threading.html?highlight=threading#module-threadin> 找到。
+Python的threading模块提供了一个抽象层次的模块_thread，这是一个低层次的模块。当开发一个基于线程的并行系统的艰巨任务时，它为程序员提供了一些函数来帮助程序员的开发。如有疑问，请查阅[官方文档](http://docs.python.org/3/library/
+threading.html?highlight=threading#module-threadin)。
 
 ### mutliprocess模块
-multiprocessing模块旨在为基于进程的并行的使用提供一个简单的API。这个模块与线程模块类似，它简化了基于进程的并行系统的开发,这一点与线程模块没有什么不同。在Python社区中，基于进程的方法很流行，因为它是在解决出现在Python中CPU-Bound threads和GIL的使用的问题时的一个解决方案。官方文档： <http://docs.python.org/3/library/multiprocessing.html?highlight=multi
-processing#multiprocessing> 找到。
+multiprocessing模块旨在为基于进程的并行的使用提供一个简单的API。这个模块与线程模块类似，它简化了基于进程的并行系统的开发,这一点与线程模块没有什么不同。在Python社区中，基于进程的方法很流行，因为它是在解决出现在Python中CPU-Bound threads和GIL的使用的问题时的一个解决方案。我们可以在[官方文档](http://docs.python.org/3/library/multiprocessing.html?highlight=multi
+processing#multiprocessing)之中找到。
 
 
 ### Celery-分布式任务队列
