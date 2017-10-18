@@ -1,18 +1,18 @@
 ## 1.1 Python3的安装
 
-标签（空格分隔）： 章节说明
-
 既然要用 Python3 开发爬虫，那么第一步一定是安装 Python3。
 
 centos7 下安装方式有多种，比如命令安装、源码安装以及 anaconda 安装，推荐使用anaconda 或者命令安装，毕竟源码安装需要自行编译，时间较长。
 
 ### 1. 命令行安装
 #### python3.5版本
+
 ```
 sudo yum install -y https://centos7.iuscommunity.org/ius-release.rpm
 sudo yum update
 sudo yum install -y python35u python35u-libs python35u-devel python35u-pip
 ```
+
 执行完毕之后便可成功安装 Python3.5 及 Pip3。
 
 ### 2. 源码安装
