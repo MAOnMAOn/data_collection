@@ -6,7 +6,14 @@
 
 `pip3 install pymysql pymongo redis`
 
-### 2、RedisDump的安装
+### 2、Python 数据库驱动 SQLAlchemy
+如果觉得用 pymysql 操作数据库不方便的话，我们还可以尝试一下使用SQLAlchemy，这是一款用Python语言编写的数据库工具集，并且实现了对象关系映射（ORM）功能，同时提供了一套无需编写SQL语句便能执行数据库命令的通用接口。
+而且，SQLAlchmey不仅是只包含了ORM—它也提供了另一组件（SQLAlchemy Core）来执行抽象于具体数据库（如PostgreSQL,SQLite等）实现的数据库操作。在某些方面来说，ORM只是一种相对于Core来说自动化执行创建，读取，更新和删除操作的额外功能而已。
+同时，它的安装也很简单,直接使用 pip 安装即可：
+
+`pip3 install sqlalchemy`
+
+### 3、RedisDump的安装
 RedisDump 是一个用于 Redis 数据导入导出的工具，是基于 Ruby 实现的，所以要安装 RedisDump 需要先安装Ruby。
 
 首先，我们先安装ruby:
