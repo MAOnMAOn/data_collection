@@ -1,7 +1,5 @@
 ## 1.2 请求库的安装
 
-标签（空格分隔）： 章节说明
-
 爬虫可以简单分为几步：抓取页面、分析页面、存储数据。
 
 在抓取页面的过程中，我们需要模拟浏览器向服务器发出请求，所以需要用到一些 Python 库来实现 HTTP 请求操作，在本书中我们用到的第三方库有 Requests、Selenium、Aiotttp 等。在本节我们介绍一下这些请求库的安装方法。
@@ -52,9 +50,9 @@ Selenium 库作为一个自动化测试工具，需要浏览器来配合它使�
 我们需要记住 Chrome 版本号，在后面选择 ChromeDriver 版本时需要用到。
 
 #### （3）下载浏览器驱动
-打开 ChromeDriver 的官方网站，链接为：https://sites.google.com/a/chromium.org/chromedriver/downloads。可以看到到目前为止最新版本为 2.32，但其支持的 Chrome 浏览器版本为 59-61，所以我们可以选择 2.30 或者2.31 版本。
+打开 ChromeDriver 的官方网站，链接为：https://sites.google.com/a/chromium.org/chromedriver/downloads。 可以看到到目前为止最新版本为 2.32，但其支持的 Chrome 浏览器版本为 59-61，所以我们可以选择 2.30 或者2.31 版本。
 
-找好对应的版本号后随后到 ChromeDriver 镜像站下载对应的安装包即可：https://chromedriver.storage.googleapis.com/index.html，不同平台可以下载不同的安装包。
+找好对应的版本号后随后到 ChromeDriver 镜像站下载对应的安装包即可：https://chromedriver.storage.googleapis.com/index.html， 不同平台可以下载不同的安装包。
 
 #### （4）环境变量配置
 在 Linux、Mac 下，需要将可执行文件配置到环境变量或将文件移动到属于环境变量的目录里。
@@ -89,7 +87,7 @@ Selenium 库作为一个自动化测试工具，需要浏览器来配合它使�
 
 #### （6）启动 chromedriver 无界面模式
 
-##### （a）第一种方式
+##### 第一种方式
 在linux环境下 pip 安装 PyVirtualDisplay,让后 执行如下python代码：
 
 ```
@@ -112,7 +110,7 @@ Out[84]: <Display cmd_param=['Xvfb', '-br', '-nolisten', 'tcp', '-screen', '0', 
 
 如此，便不会Chrome浏览器便会不会弹出。
 
-##### （a）第二种方式
+##### 第二种方式
 启用Chrome的headless模式。
 
 ### 3、PhantomJS的安装
@@ -121,7 +119,7 @@ Out[84]: <Display cmd_param=['Xvfb', '-br', '-nolisten', 'tcp', '-screen', '0', 
 
 Selenium 支持 PhantomJS，而且在简单任务下，其运行效率也是较高的，还支持各种参数配置，使用非常方便，下面我们就来了解一下 PhantomJS 的安装过程。
 
-我们需要在官方网站下载对应的安装包。http://phantomjs.org/download.html，它支持多种操作系统，Windows、Linux、Mac、FreeBSD等，我们可以选择对应的平台将安装包下载下来。
+我们需要在官方网站下载对应的安装包。http://phantomjs.org/download.html， 它支持多种操作系统，Windows、Linux、Mac、FreeBSD等，我们可以选择对应的平台将安装包下载下来。
 
 Linux 下环境变量配置可以参见 ChromeDriver 安装一节，在此不再赘述，关键在于将 PhantomJS 的可执行文件所在路径配置到环境变量里。
 
@@ -135,7 +133,9 @@ browser.get('https://www.baidu.com')
 print(browser.current_url)
 ```
 在这里我们访问了百度，然后将当前的 URL 打印出来。控制台输出如下：
-https://www.baidu.com/
+
+`https://www.baidu.com/`
+
 如此一来我们便完成了 PhantomJS 的配置，在后面我们可以利用它来完成一些页面的抓取。
 
 #### （3）PhantomJS相对于其他浏览器(驱动)的不足
