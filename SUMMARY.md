@@ -8,4 +8,5 @@
   * [1.3-安装网页解析库](di-yi-zhang-kai-fa-huan-jing-pei-zhi/13an-zhuang-wang-ye-jie-xi-ku.md)
   * [1.4-安装数据库](di-yi-zhang-kai-fa-huan-jing-pei-zhi/14an-zhuang-shu-ju-ku.md)
     * [1.4.1-安装储存库](di-yi-zhang-kai-fa-huan-jing-pei-zhi/14an-zhuang-shu-ju-ku/141an-zhuang-chu-cun-ku.md)
+  * [1.5-Web库安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/15-webku-an-zhuang.md)
 
