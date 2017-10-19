@@ -33,4 +33,5 @@
   * [3.7-Python异步编程初步](di-san-zhang-python-bing-fa-bian-cheng/36-pythonyi-bu-bian-cheng-chu-bu.md)
 * [第四章 数据采集策略](di-si-zhang-shu-ju-cai-ji-ce-lve.md)
   * [4.1-目标站点初步分析](di-si-zhang-shu-ju-cai-ji-ce-lve/41cai-ji-fang-an-she-ji.md)
+  * [4.2-爬虫搜索策略](di-si-zhang-shu-ju-cai-ji-ce-lve/42pa-chong-sou-suo-ce-lve.md)
 
