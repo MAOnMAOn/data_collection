@@ -1,4 +1,4 @@
-## 2.6 Session和Cookies
+## 2.9 Session和Cookies
 
 标签（空格分隔）： 章节说明
 
