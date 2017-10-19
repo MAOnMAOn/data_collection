@@ -51,4 +51,5 @@
     * [5.2.2-Requests的高级用法](di-wu-zhang-wang-luo-qing-qiu-ku/52-requestsde-shi-yong/521-requestsde-gao-ji-yong-fa.md)
   * [5.3-Aiohttp的基本使用](di-wu-zhang-wang-luo-qing-qiu-ku/53-aiohttpde-ji-ben-shi-yong.md)
 * [第六章 网页数据解析](di-liu-zhang-wang-ye-shu-ju-jie-xi.md)
+  * [6.1-网页字符编码的处理](di-liu-zhang-wang-ye-shu-ju-jie-xi/61wang-ye-zi-fu-bian-ma-de-chu-li.md)
 
