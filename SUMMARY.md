@@ -37,4 +37,5 @@
 * [第四章 数据采集策略](di-si-zhang-shu-ju-cai-ji-ce-lve.md)
   * [4.1-目标站点初步分析](di-si-zhang-shu-ju-cai-ji-ce-lve/41cai-ji-fang-an-she-ji.md)
   * [4.2-爬虫搜索策略](di-si-zhang-shu-ju-cai-ji-ce-lve/42pa-chong-sou-suo-ce-lve.md)
+  * [4.3-初步了解反爬虫](di-si-zhang-shu-ju-cai-ji-ce-lve/43chu-bu-le-jie-fan-pa-chong.md)
 
