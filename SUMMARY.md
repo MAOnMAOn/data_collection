@@ -43,4 +43,5 @@
 * [第五章 网络请求库](di-wu-zhang-wang-luo-qing-qiu-ku.md)
   * [5.1-使用Urllib网络请求库](di-wu-zhang-wang-luo-qing-qiu-ku/51shi-yong-urllib-wang-luo-qing-qiu-ku.md)
     * [5.1.1-发送请求](di-wu-zhang-wang-luo-qing-qiu-ku/51shi-yong-urllib-wang-luo-qing-qiu-ku/511fa-song-qing-qiu.md)
+    * [5.1.2-异常处理](di-wu-zhang-wang-luo-qing-qiu-ku/51shi-yong-urllib-wang-luo-qing-qiu-ku/512yi-chang-chu-li.md)
 
