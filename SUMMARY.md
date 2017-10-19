@@ -41,4 +41,5 @@
   * [4.4-对抗反爬虫](di-si-zhang-shu-ju-cai-ji-ce-lve/44dui-kang-fan-pa-chong.md)
   * [4.5-基于URL的网页去重](di-si-zhang-shu-ju-cai-ji-ce-lve/45ji-yu-url-de-wang-ye-qu-zhong.md)
 * [第五章 网络请求库](di-wu-zhang-wang-luo-qing-qiu-ku.md)
+  * [5.1-使用Urllib网络请求库](di-wu-zhang-wang-luo-qing-qiu-ku/51shi-yong-urllib-wang-luo-qing-qiu-ku.md)
 
