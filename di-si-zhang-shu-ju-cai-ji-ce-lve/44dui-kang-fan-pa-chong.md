@@ -31,67 +31,65 @@
 
 6. 执行命令，服务器返回数据(response)
 
-### 2. 网站如何发现爬虫
-之前我们简单地说明过网站反爬虫的手段，
-1. 单一ip非常规访问频次
-单ip非常规的数据流量
-大量重复简单的网站浏览行为
-只下载网页，没有后续的js、css请求
-通过一些陷阱来发现爬虫，例如通过一些css对用户隐藏的链接，只有爬虫可以访问
+### 2. 网站如何进行反爬
+网站发现爬虫的手段很多，主要有以下几种：
 
-网站如何进行反爬 - userAgent
+1. 后台统计，查找非常规访问频次单一ip
+
+2. 在后台统计中，查询单ip非常规的数据流量
+
+3. 管理员对大量重复简单的网站浏览行为进行统计分析
+
+4. 如果用户只下载网页，没有后续的js、css请求，那么很被判定为爬虫
+
+5. 在前端页面设置陷阱来发现爬虫，例如通过一些css对用户隐藏的链接，只有爬虫可以访问
+
+6. 其他
+当网站(管理人员)发现异常访问，并判断为爬虫时，也有许多的反制措施，比如：
+
+***通过 userAgent***
+
 假设我们已经确定了2类爬虫的UserAgent,分别是 Nutch 和 Scrapy
+
+```
 UserAgent:Nutch
 UserAgent:Scrapy
+```
+
 对应反爬虫的 .htaccess 文件定义：
+```
 BrowserMatchNoCase Nutch bad_bot
 BrowserMatchNoCase Scrapy bad_bot
 Order Deny,Allow
 Deny from env=bad_bot
-Nutch 和 Scrapy 为禁止的key,bad_bot为定义的环境变量
+```
+这里，Nutch 和 Scrapy 为禁止的key,bad_bot为定义的环境变量。
 
-3.
-网站如何进行反爬 .htaccess
-1. Check access_log filte     Apache: /var/log/httpd
-图片
+***启用 JavaScript***
+大量使用动态页面，使得爬取难度增加，常规手段只能拿到一个基本的html页面，获取不到重要信息。
 
-2. Order Deny, Allow
-Deny from xxx.xxx.xxx.xxx
-Deny from xxx.xxx.xxx.xxx
+同时，即使爬虫采用了Web环境来渲染网页，也会大大增加爬虫的负担与爬取时间
+同时，采用动态加载技术，对服务器的负担也会减轻。
 
-网站如何进行反爬虫 JavaScript
-大量使用动态页面，使得爬取难度增加，常规手段只能拿到一个基本的html页面，获取不到重要信息
-即使爬虫采用了Web环境来渲染网页，也会大大增加爬虫的负担与爬取时间
-同时，采用动态加载技术，对服务器的负担也会减轻
+***基于流量的拒绝***
+在 Apache 之中开启带宽限制模块 LoadModule bw_module ，设置访问的最大带宽，比如每个ip最多3个连接，最大1MB/s，在 mod_bw.so 之中设置：
 
-基于流量的拒绝
-开启带宽限制模块 LoadModule bw_module  /usr/lib/apache/mod_bw.so
-设置访问的最大带宽，每个ip最多3个连接，最大1MB/s
+```
 BandWidthModule On
 ForceBandWidthModule On
 BandWidth all 1024000
 MinBandwidth all -l
 MaxConnection all 3
+```
+```
 #<Location/modbw>
 #  SetHandler modbw-handler
 #</Location>
+```
 
-基于ip连接的拒绝
-some_folder 目录 每个ip最多1个同时的连接，不限制 image/* 目录的文件
-	[codesyntax lang=”apache”]
-	<Location /some_folder>
-	MaxConnPerIP 1
-	NoIPLimit image/*
-	</Location>
+***在iptables中进行控制***
 
-/home/*/public_html仅限一个ip访问，但是仅针对audio/mpeg格式文件
-[codesyntax lang=”apache”]
-<Directory /home/*/public_html>
-MaxConnPerIP 1
-OnlyIPLimit audio/mpeg video
-</Directory>
-
-iptables 的控制
+```
 syntax
 /sbin/iptables -A INPUT -p tcp --syn --dport $port -m connlimit
 --connlimit-above N -j REJECT --reject-with tcp-reset
@@ -103,11 +101,14 @@ connlimit-above 20 -j REJECT --reject-with tcp-reset
 Example: Limit HTTP Connections Per IP / Host Per Second
 iptables -A INPUT -m state --state RELATED,ESTABLISHED -m
 limit --limit 10/second --limit-burst 20 -j ACCEPT
+```
 
-当收到20个数据包后，触发访问频次限制，此时每秒最多10次连接请求，即单位时间
-为 100ms；如果100ms内没有收到请求，系统触发的条件就+1，也就是说如果1s钟
-内停止发送数据，则再次建立10次连接之内都不会激活单位计数限制
+当收到20个数据包后，触发访问频次限制，此时每秒最多10次连接请求，即单位时间为 100ms；
 
+如果100ms内没有收到请求，系统触发的条件就+1，也就是说如果1s钟内停止发送数据，则再次建立10次连接之内都不会激活单位计数限制。
+
+***投毒***
+在不影响正常业务开展的前提下，网站可能会输出假数据，让爬虫知难而退。
 
 1. 应对反爬虫
 怎么发现自己可能被网站识别了？
