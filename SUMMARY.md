@@ -57,4 +57,5 @@
   * [6.4-LXML的简单使用](di-liu-zhang-wang-ye-shu-ju-jie-xi/64-lxmlde-jian-dan-shi-yong.md)
   * [6.5-BeautifulSoup的使用](di-liu-zhang-wang-ye-shu-ju-jie-xi/65-beautifulsoupde-shi-yong.md)
   * [6.6-PyQuery解析库](di-liu-zhang-wang-ye-shu-ju-jie-xi/66-pyqueryjie-xi-ku.md)
+* [第七章　爬虫数据存储](di-qi-zhang-pa-chong-shu-ju-cun-chu.md)
 
