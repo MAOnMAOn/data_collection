@@ -46,4 +46,5 @@
     * [5.1.2-异常处理](di-wu-zhang-wang-luo-qing-qiu-ku/51shi-yong-urllib-wang-luo-qing-qiu-ku/512yi-chang-chu-li.md)
     * [5.1.3-解析链接](di-wu-zhang-wang-luo-qing-qiu-ku/51shi-yong-urllib-wang-luo-qing-qiu-ku/513jie-xi-lian-jie.md)
     * [5.1.4-Robots协议分析](di-wu-zhang-wang-luo-qing-qiu-ku/51shi-yong-urllib-wang-luo-qing-qiu-ku/514-robotsxie-yi-fen-xi.md)
+  * [5.2-Requests的使用](di-wu-zhang-wang-luo-qing-qiu-ku/52-requestsde-shi-yong.md)
 
