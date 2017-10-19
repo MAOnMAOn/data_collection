@@ -27,7 +27,7 @@
   * [3.1-并行算法设计](di-san-zhang-python-bing-fa-bian-cheng/31bing-xing-suan-fa-she-ji.md)
   * [3.2-Python中的线程](di-san-zhang-python-bing-fa-bian-cheng/32-pythonzhong-de-duo-xian-cheng.md)
   * [3.3-理解进程](di-san-zhang-python-bing-fa-bian-cheng/33li-jie-jin-cheng.md)
-  * [3.4-并发编程概念浅析](di-san-zhang-python-bing-fa-bian-cheng/34bing-fa-bian-cheng-gai-nian-qian-xi.md)
+  * [3.4-并行编程概念浅析](di-san-zhang-python-bing-fa-bian-cheng/34bing-fa-bian-cheng-gai-nian-qian-xi.md)
   * [3.5-并发编程之multiprocessing](di-san-zhang-python-bing-fa-bian-cheng/34bing-fa-bian-cheng-zhi-multiprocessing.md)
   * [3.6-concurrent.futures进程池](di-san-zhang-python-bing-fa-bian-cheng/36-concurrentfuturesjin-cheng-chi.md)
   * [3.7-Python异步编程初步](di-san-zhang-python-bing-fa-bian-cheng/36-pythonyi-bu-bian-cheng-chu-bu.md)
