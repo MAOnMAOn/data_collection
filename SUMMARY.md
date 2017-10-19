@@ -10,6 +10,7 @@
     * [1.4.1-安装储存库](di-yi-zhang-kai-fa-huan-jing-pei-zhi/14an-zhuang-shu-ju-ku/141an-zhuang-chu-cun-ku.md)
   * [1.5-Web库安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/15-webku-an-zhuang.md)
     * [1.5.1-虚拟环境安装与Django使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/15-webku-an-zhuang/151xu-ni-huan-jing-an-zhuang-yu-django-shi-yong.md)
+  * 1.6-移动端爬取相关库安装
   * [1.7-Scrapy及部分插件的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/16-scrapyji-bu-fen-cha-jian-de-an-zhuang.md)
   * [1.8-部署相关库的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang.md)
     * [1.8.1-Scrapyd及其拓展的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/181-scrapydji-qi-tuo-zhan-de-an-zhuang-shi-yong.md)
@@ -30,4 +31,5 @@
   * [3.5-并发编程之multiprocessing](di-san-zhang-python-bing-fa-bian-cheng/34bing-fa-bian-cheng-zhi-multiprocessing.md)
   * [3.6-concurrent.futures进程池](di-san-zhang-python-bing-fa-bian-cheng/36-concurrentfuturesjin-cheng-chi.md)
   * [3.7-Python异步编程初步](di-san-zhang-python-bing-fa-bian-cheng/36-pythonyi-bu-bian-cheng-chu-bu.md)
+* [第四章 数据采集策略](di-si-zhang-shu-ju-cai-ji-ce-lve.md)
 
