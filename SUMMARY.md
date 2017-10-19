@@ -52,4 +52,5 @@
   * [5.3-Aiohttp的基本使用](di-wu-zhang-wang-luo-qing-qiu-ku/53-aiohttpde-ji-ben-shi-yong.md)
 * [第六章 网页数据解析](di-liu-zhang-wang-ye-shu-ju-jie-xi.md)
   * [6.1-网页字符编码的处理](di-liu-zhang-wang-ye-shu-ju-jie-xi/61wang-ye-zi-fu-bian-ma-de-chu-li.md)
+  * [6.2-使用正则表达式](di-liu-zhang-wang-ye-shu-ju-jie-xi/62shi-yong-zheng-ze-biao-da-shi.md)
 
