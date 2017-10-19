@@ -53,4 +53,5 @@
 * [第六章 网页数据解析](di-liu-zhang-wang-ye-shu-ju-jie-xi.md)
   * [6.1-网页字符编码的处理](di-liu-zhang-wang-ye-shu-ju-jie-xi/61wang-ye-zi-fu-bian-ma-de-chu-li.md)
   * [6.2-使用正则表达式](di-liu-zhang-wang-ye-shu-ju-jie-xi/62shi-yong-zheng-ze-biao-da-shi.md)
+  * [6.3-Xpath基本原理](di-liu-zhang-wang-ye-shu-ju-jie-xi/63-xpathji-ben-yuan-li.md)
 
