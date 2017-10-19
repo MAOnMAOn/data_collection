@@ -55,6 +55,7 @@ Session，即会话，其本来的含义是指有始有终的一系列动作/消
 Cookie，有时也用其复数形式 Cookies，指某些网站为了辨别用户身份、进行 Session 跟踪而储存在用户本地终端上的数据。
 
 ***会话维持***
+
 当客户端第一次请求服务器时，服务器会返回一个 Headers 中带有 Set-Cookie 字段的 Response 给客户端，用来标记是哪一个用户，客户端浏览器会把Cookies 保存起来。当浏览器下一次再请求该网站时，浏览器会把此Cookies 放到 Request Headers 一起提交给服务器，Cookies 携带了 Session ID 信息，服务器检查该 Cookies 即可找到对应的 Session 是什么，然后再判断 Session 来以此来辨认用户状态。
 
 所以我们在登录某个网站的时候，登录成功后服务器会告诉客户端设置哪些 Cookies 信息，在后续访问页面时客户端会把 Cookies 发送给服务器，服务器再找到对应的 Session 加以判断，如果 Session 中的某些设置登录状态的变量是有效的，那就证明用户是处于登录状态的，即可返回登录之后才可以查看的网页内容，浏览器进行解析便可以看到了。
@@ -63,6 +64,7 @@ Cookie，有时也用其复数形式 Cookies，指某些网站为了辨别用户
 所以 Cookies 和 Session ，一个处于客户端，一个处于服务端，二者共同协作，就实现了登录会话控制。
 
 ***属性结构***
+
 这里以知乎为例，在浏览器开发者工具中打开 Application 选项卡，然后在左侧会有一个 Storage 部分，最后一项即为 Cookies，将其点开：
 
 ![](/assets/cookieandsession.png)
@@ -81,6 +83,7 @@ Cookie，有时也用其复数形式 Cookies，指某些网站为了辨别用户
 以上便是 Cookies 的基本结构。
 
 ***会话Cookie、持久Cookie***
+
 表面意思来说，会话 Cookie 就是把 Cookie 放在浏览器内存里，浏览器在关闭之后该 Cookie 即失效，持久 Cookie 则会保存到客户端的硬盘中，下次还可以继续使用，用于长久保持用户登录状态。
 
 其实严格来说没有会话 Cookie 和持久 Cookie 之分，它只是由 Cookie 的 Max Age 或 Expires 字段决定了过期的时间，通过它浏览器可以计算出其有效时间。Max Age 如果为正数，则该 Cookie 在 Max Age 秒之后失效，如果 Max Age 特别大，那就会保存非常长的时间。如果为负数，则关闭浏览器时 Cookie 即失效，浏览器也不会以任何形式保存该 Cookie。
