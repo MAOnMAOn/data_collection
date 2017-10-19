@@ -5,13 +5,13 @@
 ### 1. 深度优先搜索策略(Depth-First Search)
 即图的深度优先遍历算法。网络爬虫会从起始页开始，一个链接一个链接跟踪下去，处理完这条线路之后再转入下一个起始页，继续跟踪链接。
 
-![](search1.png)
+![](/assets/search1.png)
 
 ### 2. 广度优先搜索策略（Breadth First Search）
 宽度优先遍历策略的基本思路是，将新下载网页中发现的链接直接插入待抓取URL队列的末尾。也就是指网络爬虫会先抓取起始网页中链接的所有网页，然后再选择其中的一个链接网页，继续抓取在此网页中链接的所有网页。
 有很多研究将广度优先搜索策略应用于聚焦爬虫中。其基本思想是认为与初始URL在一定链接距离内的网页具有主题相关性的概率很大。
 
-![](search2.jpg)
+![](/assets/search2.jpg)
 
 ### 3. 广度优先搜索和深度优先搜索
 深度优先搜索算法涉及的是堆栈
@@ -19,7 +19,7 @@
 堆栈(stacks)具有后进先出(last in first out，LIFO)的特征
 队列(queue)是一种具有先进先出(first in first out，LIFO)特征的线性数据结构。
 
-![](06-tree03.png)
+![](/assets/06-tree03.png)
 
 ### 4. 搜索策略的选择
 - 重要网页与种子站点的距离。
@@ -34,5 +34,4 @@ DEPTH_PRIORITY = 1
 SCHEDULER_DISK_QUEUE = 'scrapy.squeue.PickleFifoDiskQueue'
 SCHEDULER_MEMORY_QUEUE = 'scrapy.squeue.FifoMemoryQueue'
 ```
-
-![](search4.png)
+![](/assets/search4.png)
