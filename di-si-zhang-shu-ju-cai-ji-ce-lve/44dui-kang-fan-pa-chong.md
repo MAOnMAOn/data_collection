@@ -66,12 +66,14 @@ Deny from env=bad_bot
 这里，Nutch 和 Scrapy 为禁止的key,bad_bot为定义的环境变量。
 
 ***启用 JavaScript***
+
 大量使用动态页面，使得爬取难度增加，常规手段只能拿到一个基本的html页面，获取不到重要信息。
 
 同时，即使爬虫采用了Web环境来渲染网页，也会大大增加爬虫的负担与爬取时间
 同时，采用动态加载技术，对服务器的负担也会减轻。
 
 ***基于流量的拒绝***
+
 在 Apache 之中开启带宽限制模块 LoadModule bw_module ，设置访问的最大带宽，比如每个ip最多3个连接，最大1MB/s，在 mod_bw.so 之中设置：
 
 ```
@@ -108,6 +110,7 @@ limit --limit 10/second --limit-burst 20 -j ACCEPT
 如果100ms内没有收到请求，系统触发的条件就+1，也就是说如果1s钟内停止发送数据，则再次建立10次连接之内都不会激活单位计数限制。
 
 ***投毒***
+
 在不影响正常业务开展的前提下，网站可能会输出假数据，让爬虫知难而退。
 
 ### 3. 如何应对反爬虫
@@ -161,6 +164,7 @@ Authorization: Basic YWRtaW46cm9vdGFkbWlu
 
 ![](/assets/路由器重连.png)
 
+<br />
 #### b. CSS 相关属性检测
 
 ***nofollow 属性***
