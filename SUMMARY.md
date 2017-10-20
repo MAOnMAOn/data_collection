@@ -62,4 +62,6 @@
     * [7.1.1-TXT文本存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu/711-txtwen-ben-cun-chu.md)
     * [7.1.2-Json文件存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu/712-jsonwen-jian-cun-chu.md)
     * [7.1.3-CSV数据存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu/713-csvshu-ju-cun-chu.md)
+  * [7.2-关系型数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/72guan-xi-xing-shu-ju-ku.md)
+    * [7.2.1-利用PyMySQL进行存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/72guan-xi-xing-shu-ju-ku/721li-yong-pymysql-jin-xing-cun-chu.md)
 
