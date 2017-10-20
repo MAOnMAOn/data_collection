@@ -76,4 +76,7 @@
   * [8.2-Selenium的基本使用](di-ba-zhang-dong-tai-ye-mian-pa-chong/82-seleniumde-ji-ben-shi-yong.md)
   * [8.3-使用Splash](di-ba-zhang-dong-tai-ye-mian-pa-chong/83shi-yong-splash.md)
 * [第九章　使用网络代理](di-jiu-zhang-shi-yong-wang-luo-dai-li.md)
+  * 9.1-路由器断线重连
+  * [9.2-Selenium中为Chrome添加高匿代理](di-jiu-zhang-shi-yong-wang-luo-dai-li/92-seleniumwei-chrome-tian-jia-gao-ni-dai-li.md)
+  * 9.3-构建代理池
 
