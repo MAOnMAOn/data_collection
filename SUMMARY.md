@@ -15,6 +15,7 @@
   * [1.8-部署相关库的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang.md)
     * [1.8.1-Scrapyd及其拓展的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/181-scrapydji-qi-tuo-zhan-de-an-zhuang-shi-yong.md)
     * [1.8.2 Docker的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/11111111.md)
+  * 1.9-ElasticSearch及其组件的安装
 * [第二章 爬虫网络基础](di-er-zhang-pa-chong-wang-luo-ji-chu.md)
   * [2.1-HTTP原理简介](di-er-zhang-pa-chong-wang-luo-ji-chu/21-httpyuan-li-jian-jie.md)
   * [2.2-HTTPS的简单原理](di-er-zhang-pa-chong-wang-luo-ji-chu/22-httpsde-jian-dan-yuan-li.md)
@@ -74,4 +75,5 @@
     * [8.1.2-提取Ajax数据](di-ba-zhang-dong-tai-ye-mian-pa-chong/81huo-qu-ajax-shu-ju/812ti-qu-ajax-shu-ju.md)
   * [8.2-Selenium的基本使用](di-ba-zhang-dong-tai-ye-mian-pa-chong/82-seleniumde-ji-ben-shi-yong.md)
   * [8.3-使用Splash](di-ba-zhang-dong-tai-ye-mian-pa-chong/83shi-yong-splash.md)
+* [第九章　使用网络代理](di-jiu-zhang-shi-yong-wang-luo-dai-li.md)
 
