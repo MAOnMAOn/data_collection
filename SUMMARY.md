@@ -72,4 +72,5 @@
   * [8.1-获取Ajax数据](di-ba-zhang-dong-tai-ye-mian-pa-chong/81huo-qu-ajax-shu-ju.md)
     * [8.1.1-Ajax浅析](di-ba-zhang-dong-tai-ye-mian-pa-chong/81huo-qu-ajax-shu-ju/811-ajaxqian-xi.md)
     * [8.1.2-提取Ajax数据](di-ba-zhang-dong-tai-ye-mian-pa-chong/81huo-qu-ajax-shu-ju/812ti-qu-ajax-shu-ju.md)
+  * [8.2-Selenium的基本使用](di-ba-zhang-dong-tai-ye-mian-pa-chong/82-seleniumde-ji-ben-shi-yong.md)
 
