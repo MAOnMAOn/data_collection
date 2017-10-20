@@ -16,6 +16,7 @@
     * [1.8.1-Scrapyd及其拓展的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/181-scrapydji-qi-tuo-zhan-de-an-zhuang-shi-yong.md)
     * [1.8.2 Docker的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/11111111.md)
   * [1.9-ELK日志分析监控系统搭建](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang.md)
+    * [1.9.1-安装配置ELK](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang/191an-zhuang-pei-zhi-elk.md)
 * [第二章 爬虫网络基础](di-er-zhang-pa-chong-wang-luo-ji-chu.md)
   * [2.1-HTTP原理简介](di-er-zhang-pa-chong-wang-luo-ji-chu/21-httpyuan-li-jian-jie.md)
   * [2.2-HTTPS的简单原理](di-er-zhang-pa-chong-wang-luo-ji-chu/22-httpsde-jian-dan-yuan-li.md)
