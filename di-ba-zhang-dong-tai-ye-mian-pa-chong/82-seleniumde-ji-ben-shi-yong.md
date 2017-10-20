@@ -1,4 +1,4 @@
-## 7.1 Selenium的基本使用
+## 8.2 Selenium的基本使用
 
 ### 1. 准备工作
 我们以 Chrome 为例来讲解 Selenium 的用法，在本节开始之前请确保已经正确安装好了 Chrome 浏览器并配置好了 ChromeDriver，另外还需要正确安装好 Python 的 Selenium 库。
