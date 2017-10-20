@@ -68,4 +68,6 @@
   * [7.3-NoSQL数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu.md)
     * [7.3.1-操作Mongodb数据库](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/731cao-zuo-mongodb-shu-ju-ku.md)
     * [7.3.2-Redis数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/732-redisshu-ju-ku-cun-chu.md)
+* [第八章　动态页面爬虫](di-ba-zhang-dong-tai-ye-mian-pa-chong.md)
+  * [8.1-获取Ajax数据](di-ba-zhang-dong-tai-ye-mian-pa-chong/81huo-qu-ajax-shu-ju.md)
 
