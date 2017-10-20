@@ -1,4 +1,4 @@
-## 7.2.1 MySql数据存储
+## 7.2.1 利用 PyMySql 进行存储
 
 过去使用的 MySQLDB，其官方并不支持 Python3，所以我们这里操作推荐使用的库是 PyMySQL，后期有时间我们还可以简单说明如何通过 sqlalchemy 来操作 mysql。
 
