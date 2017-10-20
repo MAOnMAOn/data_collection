@@ -65,5 +65,7 @@ Ajax其实有其特殊的请求类型，它叫做 xhr，network中我们可以�
 
 接下来我们再利用 Chrome 开发者工具的筛选功能筛选出所有的 Ajax 请求，在请求的上方有一层筛选栏，我们可以点击 XHR，这样在下方显示的所有请求便都是 Ajax 请求了。
 
+![](/assets/ajaxxhr.png)
+
 再接下来我们我们不断滑动页面，可以看到在页面底部有一条条新的商品条目被刷出，而开发者工具下方也一个个地出现 Ajax 请求，这样我们就可以捕获到所有的 Ajax 请求了。
 随意点开一个条目都可以清楚地看到其 Request URL、Request Headers、Response Headers、Response Body等内容，想要模拟请求和提取就非常简单了。
