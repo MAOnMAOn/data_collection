@@ -49,6 +49,41 @@ export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 ![](/assets/javaversion.png)
 
 
+安装结束之后我们可以创建 Python3 软链接，命令如下：
+`sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python3`
+
+随后下载 Pip 安装包并安装，命令如下：
+```
+wget --no-check-certificate https://github.com/pypa/pip/archive/9.0.1.tar.gz
+tar -xzvf 9.0.1.tar.gz
+cd pip-9.0.1
+python3 setup.py install
+```
+
+安装完成后再创建 Pip3 链接，这样就成功安装了Python3以及pip3，命令如下：
+`sudo ln -s /usr/local/python3/bin/pip /usr/bin/pip3`
+
+### 3. Anaconda安装
+Anaconda 同样支持 Linux，其官方下载链接为：https://www.continuum.io/downloads，选择 Python3 版本的安装包下载即可。
+
+如果下载速度过慢可以选择使用清华大学镜像，
+下载列表链接为：https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/，
+使用说明链接为：https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/，
+我们可以选择需要的版本进行下载，速度相比官网会快很多。
+
+### 4. 相关链接
+
+官方网站：http://python.org
+下载地址：https://www.python.org/downloads
+第三方库：https://pypi.python.org/pypi
+官方文档：https://docs.python.org/3
+中文教程：http://www.runoob.com/python3/python3-tutorial.html
+Awesome Python：https://github.com/vinta/awesome-python
+Awesome Python 中文版：https://github.com/jobbole/awesome-python-cn
+
+
+
+
 
 
 
