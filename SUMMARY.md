@@ -67,4 +67,5 @@
     * 7.2.2-SqlAlchemy数据库操作
   * [7.3-NoSQL数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu.md)
     * [7.3.1-操作Mongodb数据库](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/731cao-zuo-mongodb-shu-ju-ku.md)
+    * [7.3.2-Redis数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/732-redisshu-ju-ku-cun-chu.md)
 
