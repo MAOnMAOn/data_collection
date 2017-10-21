@@ -194,7 +194,7 @@ sudo yum update
 同样可以使用 redis-cli 进入 Redis 命令行模式操作。
 另外为了可以使 Redis 能被远程连接，需要修改配置文件，路径为
 
-`/etc/redis.conf。`
+`/etc/redis.conf`
 
 注释这一行：
 
