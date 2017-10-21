@@ -1,4 +1,4 @@
-## 1.7.1 Scrapyd及其拓展的安装使用
+## 1.7.1 安装 Scrapyd 及其组件
 
 ### 1、Scrapyd安装配置
 Scrapyd 是一个用于部署和运行 Scrapy 项目的工具。有了它，你可以将写好的 Scrapy 项目上传到云主机并通过 API 来控制它的运行。

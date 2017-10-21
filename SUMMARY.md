@@ -11,9 +11,9 @@
   * [1.5-Web库安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/15-webku-an-zhuang.md)
     * [1.5.1-安装Django](di-yi-zhang-kai-fa-huan-jing-pei-zhi/15-webku-an-zhuang/151xu-ni-huan-jing-an-zhuang-yu-django-shi-yong.md)
   * 1.6-移动端爬取相关库安装
-  * [1.7-Scrapy及部分插件的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/16-scrapyji-bu-fen-cha-jian-de-an-zhuang.md)
-    * [1.7.1-安装Scrapyd](di-yi-zhang-kai-fa-huan-jing-pei-zhi/16-scrapyji-bu-fen-cha-jian-de-an-zhuang/171an-zhuang-scrapyd.md)
-  * [1.8-部署相关库的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang.md)
+  * [1.7-Scrapy模块的安装](di-yi-zhang-kai-fa-huan-jing-pei-zhi/16-scrapyji-bu-fen-cha-jian-de-an-zhuang.md)
+    * [1.7.1-安装Scrapyd及其组件](di-yi-zhang-kai-fa-huan-jing-pei-zhi/16-scrapyji-bu-fen-cha-jian-de-an-zhuang/171an-zhuang-scrapyd.md)
+  * [1.8-系统环境搭建](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang.md)
     * [1.8.1-安装虚拟环境](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/182an-zhuang-xu-ni-huan-jing.md)
     * [1.8.2 Docker的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/11111111.md)
   * [1.9-ELK日志分析监控系统搭建](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang.md)
