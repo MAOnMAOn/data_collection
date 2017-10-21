@@ -25,7 +25,7 @@ Elasticsearch 官方建议使用 Oracle 的 JDK8，在安装之前首先要确�
 
 使用如下命令,把　jdk/ 文件放入 /usr/local 目录下:
 
-`mv jdk/ /usr/local`
+`sudo mv jdk/ /usr/local`
 
 ***环境变量配置***
 
@@ -48,42 +48,128 @@ export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 
 ![](/assets/javaversion.png)
 
+### 2. ElasticSearch 安装
 
-安装结束之后我们可以创建 Python3 软链接，命令如下：
-`sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python3`
+第一步，解压下载的 zip 文件，重命名为 elasticsearch/ , 并移动至 /usr/local 目录下。
 
-随后下载 Pip 安装包并安装，命令如下：
+执行如下命令:
+
+`sudo vi /usr/local/elasticsearch/config/elasticsearch.yml`
+
+第二步，修改配置文件如下:
+
 ```
-wget --no-check-certificate https://github.com/pypa/pip/archive/9.0.1.tar.gz
-tar -xzvf 9.0.1.tar.gz
-cd pip-9.0.1
-python3 setup.py install
+#这里指定的是集群名称，需要修改为对应的，开启了自发现功能后，ES会按照此集群名称进行集群发现
+
+cluster.name: elk
+
+#数据目录
+path.data:/data/elk/data
+
+# log目录
+path.logs:/data/elk/logs
+
+#修改ES的监听地址，这样别的机器也可以访问
+network.host:0.0.0.0
+
+#默认的端口号
+http.port:9200
 ```
 
-安装完成后再创建 Pip3 链接，这样就成功安装了Python3以及pip3，命令如下：
-`sudo ln -s /usr/local/python3/bin/pip /usr/bin/pip3`
+第三步：为普通用户添加权限
 
-### 3. Anaconda安装
-Anaconda 同样支持 Linux，其官方下载链接为：https://www.continuum.io/downloads，选择 Python3 版本的安装包下载即可。
+`sudo chown -R user /data/elk`
 
-如果下载速度过慢可以选择使用清华大学镜像，
-下载列表链接为：https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/，
-使用说明链接为：https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/，
-我们可以选择需要的版本进行下载，速度相比官网会快很多。
+把 /data/elk 目录及其下的所有文件和子目录的属主改成 user。
 
-### 4. 相关链接
+第四步，我们还需要修改系统默认参数，以确保有足够的资源启动 ES：
 
-官方网站：http://python.org
-下载地址：https://www.python.org/downloads
-第三方库：https://pypi.python.org/pypi
-官方文档：https://docs.python.org/3
-中文教程：http://www.runoob.com/python3/python3-tutorial.html
-Awesome Python：https://github.com/vinta/awesome-python
-Awesome Python 中文版：https://github.com/jobbole/awesome-python-cn
+***设置内核参数***
 
+执行如下命令:
 
+`sudo vi /etc/sysctl.conf`
 
+>//在文件之中，添加如下参数:
+>vm.max_map_count=655360
 
+再执行如下命令生效：
 
+`sudo sysctl -p`
 
+***设置资源参数***
 
+`sudo vi /etc/security/limits.conf`
+
+在底部添加如下内容：
+
+> \* soft nofile 65536
+
+> \* hard nofile 131072
+
+> \* soft nproc 65536
+
+> \* hard nproc 131072
+
+***设置用户参数***
+
+`sudo vi /etc/security/limits.d/20-nproc.conf`
+
+> 修改
+>user soft nproc 65536
+
+第五步　我们需要启动 es 并验证安装，**重启** 机器以后，进入 elasticsearch 的 bin 目录，以非 root 用户
+在后台启动:
+
+`./elasticsearch -d`
+
+使用 curl 查看信息：
+
+`curl -X GET http://localhost:9200`
+
+![](/assets/qidonges.png)
+
+这样，我们便完成了 es 的安装。
+
+### 3. 安装 logstash
+
+参考 es 的安装，解压文件，重命名并移动至 /usr/local 目录下。然后进入 logstash/bin 文件夹，输入：
+
+`./logstash -e 'input{stdin{}}output{stdout{codec=>rubydebug}}'`
+
+然后你会发现终端在等待你的输入。没问题，敲入 Hello World，回车，然后查看会返回结果:
+
+![](/assets/fhuijkiegelk.png)
+
+***生成并编辑配置文件***
+
+```
+input {
+  file {
+    path => "/data/elk/logs/*.log"
+    start_position => beginning
+    ignore_older => 0
+    sincedb_path => "/dev/null"
+  } 
+}
+filter {
+  grok {
+    match => { "message" => "%{COMBINEDAPACHELOG}" }
+  }
+  date {
+    match => [ "timestamp" , "dd/MMM/yyyy:HH:mm:ss Z" ]
+  }
+}
+output {
+  elasticsearch { hosts => ["192.168.8.129:9200"] }
+  stdout { codec => rubydebug }
+}
+```
+
+可能会有报错，但这个配置文件仅仅为了演示，如何改进会在下文演示。
+
+在 logstash 目录之中执行如下命令，即可启动 logstash：
+
+`./bin/logstash -f ./config/simple.conf `
+
+***提升 logstash 启动速度***
