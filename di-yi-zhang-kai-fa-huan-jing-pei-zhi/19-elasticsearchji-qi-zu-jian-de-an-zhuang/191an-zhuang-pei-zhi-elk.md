@@ -143,6 +143,8 @@ http.port:9200
 
 ***生成并编辑配置文件***
 
+这里，我们新建一个 logstash 配置文件，我们首先在输入项中设置了日志(input.file.path)的路径，在 filter 下面，进行正则匹配过滤。最后指定输出为本地 elasticsearch。
+
 ```
 input {
   file {
@@ -161,7 +163,7 @@ filter {
   }
 }
 output {
-  elasticsearch { hosts => ["192.168.8.129:9200"] }
+  elasticsearch { hosts => ["xxx.xxx.x.xxx:9200"] }
   stdout { codec => rubydebug }
 }
 ```
@@ -173,3 +175,51 @@ output {
 `./bin/logstash -f ./config/simple.conf `
 
 ***提升 logstash 启动速度***
+
+logstash 在安装完成以后，启动时间可能会越来越长，甚至是5到10多分钟。以至于怀疑程序错误，这时候可能是系统的“熵”低了。
+
+如果出现logstash启动慢，使用如下命令查询，。
+
+`cat /proc/sys/kernel/random/entropy_avail`
+
+如果返回值小于1000，那么就需要安装 haveged 包，执行如下命令即可:
+
+`yum install haveged -y && systemctl start haveged && systemctl enable haveged && systemctl status haveged`
+
+### 4. 安装 kibana
+
+参考 es 的安装，解压文件，重命名并移动至 /usr/local 目录下。然后进入 kibana/config 文件夹，编辑 kibana.yml 配置文件，修改以下参数：
+
+```
+#开启默认端口5601如果5601被占用可用5602或其他
+server.port:5601
+
+#站点地址
+server.host:“localhost”　
+
+#指向elasticsearch服务的ip地址
+elasticsearch.url:http://localhost:9200
+
+kibana.index:“.kibana”
+```
+
+***关闭 selinux ***
+
+执行如下命令：
+
+`sudo vim /etc/sysconfig/selinux `
+
+>设置 SELINUX=disabled
+
+然后执行
+
+`sudo setenforce 0`
+
+
+进入相应目录，cd kibana/bin 运行　./kibana
+
+通过kibana窗口观察你的结果：
+
+http://localhost:5601
+
+![](/assets/kibana1.png)
