@@ -70,7 +70,7 @@
     * [7.1.3-CSV数据存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu/713-csvshu-ju-cun-chu.md)
   * [7.2-关系型数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/72guan-xi-xing-shu-ju-ku.md)
     * [7.2.1-利用PyMySQL进行存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/72guan-xi-xing-shu-ju-ku/721li-yong-pymysql-jin-xing-cun-chu.md)
-    * 7.2.2-SqlAlchemy数据库操作
+    * [7.2.2-SqlAlchemy简单使用](di-qi-zhang-pa-chong-shu-ju-cun-chu/72guan-xi-xing-shu-ju-ku/722-sqlalchemyshu-ju-ku-cao-zuo.md)
   * [7.3-NoSQL数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu.md)
     * [7.3.1-操作Mongodb数据库](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/731cao-zuo-mongodb-shu-ju-ku.md)
     * [7.3.2-Redis数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/732-redisshu-ju-ku-cun-chu.md)

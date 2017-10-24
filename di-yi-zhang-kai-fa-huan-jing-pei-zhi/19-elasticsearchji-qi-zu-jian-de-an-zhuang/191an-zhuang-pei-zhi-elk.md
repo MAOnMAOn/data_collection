@@ -10,6 +10,8 @@
 
 >Kibana : 5.5.0
 
+ELK 各个组件我们在 Centos 中可以采用 yum, rpm 方式安装，当然也可以采用源码安装，今天我们来介绍一下源码安装方式。
+
 ### 1. 安装配置 Java 环境
 Elasticsearch 官方建议使用 Oracle 的 JDK8，在安装之前首先要确定下机器有没有安装 JDK。
 
