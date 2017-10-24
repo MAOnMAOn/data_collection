@@ -186,3 +186,28 @@ while True:
     print(data.decode('utf8'))
 client.close()
 ```
+
+### 3. 其他用法
+Socket 除了用于 TCP 连接，也可用与 UDP 连接，关于 UDP 连接示例，大家可以查阅相关官方文档，这里另外介绍一些其他用法。
+
+```
+s = socket.socket()
+
+s.getpeername()
+# 返回连接套接字的远程地址。返回值通常是元祖(ipaddr, port)
+
+s.getsockname()
+# 返回套接字自己地址。通常是元祖(ipaddr, port)
+
+s.setsockopt(level, optname, value)
+# 设置给定套接字选项的值
+
+s.settimeout(timeout)
+# 设置套接字操作的超时时间，timeout是一个浮点数，单位为秒，一般，超时应该在连接开始之前设置
+
+s.fileno()
+# 返回套接字的文件描述符
+
+s.setblocking(flag)
+# 如果 flag 为0,则将套接字设为非阻塞模式，放在为阻塞式(默认值)。非阻塞式下，如果调用 recv() 没有发现任何数据，或 send() 调用 无法立即发送数据，那么会引发 socket.error 异常
+```
