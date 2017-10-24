@@ -74,6 +74,7 @@
   * [7.3-NoSQL数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu.md)
     * [7.3.1-操作Mongodb数据库](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/731cao-zuo-mongodb-shu-ju-ku.md)
     * [7.3.2-Redis数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/732-redisshu-ju-ku-cun-chu.md)
+    * 7.3.3-ElasticSearch数据库存储
 * [第八章　动态页面爬虫](di-ba-zhang-dong-tai-ye-mian-pa-chong.md)
   * [8.1-获取Ajax数据](di-ba-zhang-dong-tai-ye-mian-pa-chong/81huo-qu-ajax-shu-ju.md)
     * [8.1.1-Ajax浅析](di-ba-zhang-dong-tai-ye-mian-pa-chong/81huo-qu-ajax-shu-ju/811-ajaxqian-xi.md)
@@ -84,4 +85,5 @@
   * [9.1-路由器断线重连](di-jiu-zhang-shi-yong-wang-luo-dai-li/91lu-you-qi-duan-xian-zhong-lian.md)
   * [9.2-Selenium中为Chrome添加高匿代理](di-jiu-zhang-shi-yong-wang-luo-dai-li/92-seleniumwei-chrome-tian-jia-gao-ni-dai-li.md)
   * 9.3-构建代理池
+* [第十章 模拟登录与验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma.md)
 
