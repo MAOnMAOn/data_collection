@@ -86,4 +86,6 @@
   * [9.2-Selenium中为Chrome添加高匿代理](di-jiu-zhang-shi-yong-wang-luo-dai-li/92-seleniumwei-chrome-tian-jia-gao-ni-dai-li.md)
   * 9.3-构建代理池
 * [第十章 模拟登录与验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma.md)
+* [第XX章　爬虫的监控](di-shi-yi-zhang-pa-chong-de-jian-kong.md)
+* [第XX章 分布式爬虫](di-xx-zhang-fen-bu-shi-pa-chong.md)
 
