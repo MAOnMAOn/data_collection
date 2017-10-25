@@ -16,9 +16,6 @@
   * [1.8-系统环境搭建](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang.md)
     * [1.8.1-安装虚拟环境](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/182an-zhuang-xu-ni-huan-jing.md)
     * [1.8.2 Docker的安装使用](di-yi-zhang-kai-fa-huan-jing-pei-zhi/18bu-shu-xiang-guan-ku-de-an-zhuang/11111111.md)
-  * [1.9-ELK日志分析监控系统搭建](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang.md)
-    * [1.9.1-安装配置ELK](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang/191an-zhuang-pei-zhi-elk.md)
-    * [1.9.2-安装ElasticSearch插件](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang/192an-zhuang-elasticsearch-cha-jian.md)
 * [第二章 爬虫网络基础](di-er-zhang-pa-chong-wang-luo-ji-chu.md)
   * [2.1-HTTP原理简介](di-er-zhang-pa-chong-wang-luo-ji-chu/21-httpyuan-li-jian-jie.md)
   * [2.2-HTTPS的简单原理](di-er-zhang-pa-chong-wang-luo-ji-chu/22-httpsde-jian-dan-yuan-li.md)
@@ -86,6 +83,11 @@
   * [9.2-Selenium中为Chrome添加高匿代理](di-jiu-zhang-shi-yong-wang-luo-dai-li/92-seleniumwei-chrome-tian-jia-gao-ni-dai-li.md)
   * 9.3-构建代理池
 * [第十章 模拟登录与验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma.md)
-* [第XX章　爬虫的监控](di-shi-yi-zhang-pa-chong-de-jian-kong.md)
+* 第十一章　任务队列
 * [第XX章 分布式爬虫](di-xx-zhang-fen-bu-shi-pa-chong.md)
+* [第XX章 爬虫的监控](di-shi-yi-zhang-pa-chong-de-jian-kong.md)
+  * [XX.2-ELK日志分析监控系统](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong.md)
+* [XX.2-ELK日志分析监控系统搭建](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang.md)
+  * [1.9.1-安装配置ELK](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang/191an-zhuang-pei-zhi-elk.md)
+  * [1.9.2-安装ElasticSearch插件](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang/192an-zhuang-elasticsearch-cha-jian.md)
 
