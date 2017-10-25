@@ -60,7 +60,7 @@
   * [6.4-LXML的简单使用](di-liu-zhang-wang-ye-shu-ju-jie-xi/64-lxmlde-jian-dan-shi-yong.md)
   * [6.5-BeautifulSoup的使用](di-liu-zhang-wang-ye-shu-ju-jie-xi/65-beautifulsoupde-shi-yong.md)
   * [6.6-PyQuery解析库](di-liu-zhang-wang-ye-shu-ju-jie-xi/66-pyqueryjie-xi-ku.md)
-* [第七章　爬虫数据存储](di-qi-zhang-pa-chong-shu-ju-cun-chu.md)
+* [第七章 爬虫数据存储](di-qi-zhang-pa-chong-shu-ju-cun-chu.md)
   * [7.1-文件存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu.md)
     * [7.1.1-TXT文本存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu/711-txtwen-ben-cun-chu.md)
     * [7.1.2-Json文件存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu/712-jsonwen-jian-cun-chu.md)
@@ -72,16 +72,16 @@
     * [7.3.1-操作Mongodb数据库](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/731cao-zuo-mongodb-shu-ju-ku.md)
     * [7.3.2-Redis数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/732-redisshu-ju-ku-cun-chu.md)
     * 7.3.3-ElasticSearch数据库存储
-* [第八章　动态页面爬虫](di-ba-zhang-dong-tai-ye-mian-pa-chong.md)
+* [第八章 动态页面爬虫](di-ba-zhang-dong-tai-ye-mian-pa-chong.md)
   * [8.1-获取Ajax数据](di-ba-zhang-dong-tai-ye-mian-pa-chong/81huo-qu-ajax-shu-ju.md)
     * [8.1.1-Ajax浅析](di-ba-zhang-dong-tai-ye-mian-pa-chong/81huo-qu-ajax-shu-ju/811-ajaxqian-xi.md)
     * [8.1.2-提取Ajax数据](di-ba-zhang-dong-tai-ye-mian-pa-chong/81huo-qu-ajax-shu-ju/812ti-qu-ajax-shu-ju.md)
   * [8.2-Selenium的基本使用](di-ba-zhang-dong-tai-ye-mian-pa-chong/82-seleniumde-ji-ben-shi-yong.md)
   * [8.3-使用Splash](di-ba-zhang-dong-tai-ye-mian-pa-chong/83shi-yong-splash.md)
-* [第九章　使用网络代理](di-jiu-zhang-shi-yong-wang-luo-dai-li.md)
+* [第九章 使用网络代理](di-jiu-zhang-shi-yong-wang-luo-dai-li.md)
   * [9.1-路由器断线重连](di-jiu-zhang-shi-yong-wang-luo-dai-li/91lu-you-qi-duan-xian-zhong-lian.md)
   * [9.2-Selenium中为Chrome添加高匿代理](di-jiu-zhang-shi-yong-wang-luo-dai-li/92-seleniumwei-chrome-tian-jia-gao-ni-dai-li.md)
-  * 9.3-构建代理池
+  * [9.3-构建代理池](di-jiu-zhang-shi-yong-wang-luo-dai-li/93gou-jian-dai-li-chi.md)
 * [第十章 模拟登录与验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma.md)
 * [第十一章 任务队列](di-shi-yi-zhang-ren-wu-dui-lie.md)
 * 第十二章 采集APP数据
