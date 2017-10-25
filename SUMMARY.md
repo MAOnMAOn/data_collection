@@ -89,7 +89,4 @@
   * [XX.2-ELK日志分析监控系统](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong.md)
     * [XX.2.1-安装配置ELK](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/xx21an-zhuang-pei-zhi-elk.md)
     * [XX.2.2-安装ElasticSearch插件](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/xx22an-zhuang-elasticsearch-chuang-jian.md)
-* [XX.2-ELK日志分析监控系统搭建](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang.md)
-  * [1.9.1-安装配置ELK](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang/191an-zhuang-pei-zhi-elk.md)
-  * [1.9.2-安装ElasticSearch插件](di-yi-zhang-kai-fa-huan-jing-pei-zhi/19-elasticsearchji-qi-zu-jian-de-an-zhuang/192an-zhuang-elasticsearch-cha-jian.md)
 
