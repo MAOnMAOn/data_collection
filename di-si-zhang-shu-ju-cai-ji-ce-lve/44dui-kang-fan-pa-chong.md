@@ -47,7 +47,7 @@
 6. 其他
 当网站(管理人员)发现异常访问，并判断为爬虫时，也有许多的反制措施，比如：
 
-***通过 userAgent***
+***通过 UserAgent***
 
 假设我们已经确定了2类爬虫的UserAgent,分别是 Nutch 和 Scrapy
 
@@ -64,6 +64,8 @@ Order Deny,Allow
 Deny from env=bad_bot
 ```
 这里，Nutch 和 Scrapy 为禁止的key,bad_bot为定义的环境变量。
+
+当然部分网站在请求头之中除了需要添加 UserAgent,还需要添加其他参数，如  X-Forwarded-For 与 Referer。
 
 ***启用 JavaScript***
 
