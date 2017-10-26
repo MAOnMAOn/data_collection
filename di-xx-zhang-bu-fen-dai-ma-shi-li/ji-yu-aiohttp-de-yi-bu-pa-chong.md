@@ -5,8 +5,8 @@
 ### 1. 案例来源
 可能你已经听过[开源程序架构](http://aosabook.org/en/index.html)系列书籍。今天介绍的爬虫就是改造自[500 Lines or Less中的爬虫项目](https://github.com/aosabook/500lines/tree/master/crawler)。
 
-由于使用了异步的aiohttp与asyncio，性能还是相当不错的。运行时发现一小时可以爬下五万个网页，虽然链家对爬虫很宽容，但是也不能火力全开，最终尝试后发现将每个协程爬取的睡眠时间设置为0.1s比较适中。至于线程池+requests+bs4的结构，没有尝试过，不好对比它们的性能差距。
-以下是官网的介绍，Python版本要求>3.4。500行项目里的爬虫并不爬取网页数据，只是通过搜集每一页的url链接展示了如何结合asyncio库使用aiohttp这个异步HTTP客户端。
+由于使用了异步的aiohttp与asyncio，性能还是相当不错的。运行时发现一小时可以爬下五万个网页，虽然链家对爬虫很宽容，但是也不能火力全开，最终尝试后发现将每个协程爬取的睡眠时间设置为0.1s比较适中。至于线程池 + requests + bs4 的结构，没有尝试过，不好对比它们的性能差距。
+以下是官网的介绍，Python 版本要求>3.4。500行项目里的爬虫并不爬取网页数据，只是通过搜集每一页的url链接展示了如何结合 asyncio 库使用 aiohttp 这个异步 HTTP 客户端。
 
 ```
 Authors: A. Jesse Jiryu Davis and Guido van Rossum
