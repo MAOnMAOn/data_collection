@@ -25,7 +25,7 @@
   * [2.6-TCP协议](di-er-zhang-pa-chong-wang-luo-ji-chu/23-tcpxie-yi.md)
   * [2.7-Web前端基础](di-er-zhang-pa-chong-wang-luo-ji-chu/22-webqian-duan-ji-chu.md)
   * [2.8-代理基本原理](di-er-zhang-pa-chong-wang-luo-ji-chu/25dai-li-ji-ben-yuan-li.md)
-  * [2.9-网站登录验证之Session与Cookies](di-er-zhang-pa-chong-wang-luo-ji-chu/26wang-zhan-deng-lu-yan-zheng-zhi-session-yu-cookies.md)
+  * [2.9-Session-Cookies-Token](di-er-zhang-pa-chong-wang-luo-ji-chu/26wang-zhan-deng-lu-yan-zheng-zhi-session-yu-cookies.md)
   * [2.10-Socket编程原理](di-er-zhang-pa-chong-wang-luo-ji-chu/210-socketbian-cheng-yuan-li.md)
     * [2.10.1-Socket编程实例](di-er-zhang-pa-chong-wang-luo-ji-chu/210-socketbian-cheng-yuan-li/2101-socketbian-cheng-shi-li.md)
   * [2.11-爬虫基本原理](di-er-zhang-pa-chong-wang-luo-ji-chu/210pa-chong-ji-ben-yuan-li.md)
