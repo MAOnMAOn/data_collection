@@ -1,121 +1,5 @@
 ## 4.4 对抗反爬虫
 
-爬虫与反爬虫之间的对抗，是所有爬虫工程师以及网站管理人员不得不面对的一个课题，作为爬虫的编写者，了解常见的反爬机制，是十分有必要的。现在，我们就从Web 服务器，网站反爬虫技术，爬取策略等几个方面展开，进行本节的介绍。
-
-### 1. 服务器对 web 请求的处理
-一般来说，基本的Web服务器请求有以下几个步骤：
-
-1. 建立连接————接受客户端连接，若不希望与客户端进行连接，可以将其关闭。
-2. 接收请求————从网络中读取一条 HTTP 请求报文。
-3. 处理请求————解释请求报文，并采取行动。
-4. 访问资源————访问报文中指定的资源。
-5. 构建响应————创建带有正确首部的 HTTP响应报文。
-6. 发送响应————将响应送给客户端
-7. 记录事务处理过程————将已经完成事务有关的内容记录在一个日志文件中。
-
-现在，我们以 Apache 网络服务器为例进行讲解：
-
-![](/assets/服务器处理web请求.png)服务器处理 Web 请求流程
-
-从上图我们可以看到，当客户端发起访问时，
- 
-1. 网络流量首先会到达防火墙，防火墙会对相关请求的对访问频次进行检查。
-
-2. 通过网关进行端口映射后，请求相关数据到达对应的服务，例如 Apache
-
-3. 在 Apache 之中，Apache 会通过 virtual host 查找根目录，并查找 .htaccess 伪静态设置，映射实际目录及文件
-
-4. 执行脚本或提取文件
-
-5. 服务器端确认 cookie 信息，查找用户，确认成功以后，进行用户权限检查
-
-6. 执行命令，服务器返回数据(response)
-
-### 2. 网站如何进行反爬
-网站发现爬虫的手段很多，主要有以下几种：
-
-1. 后台统计，查找非常规访问频次单一ip
-
-2. 在后台统计中，查询单ip非常规的数据流量
-
-3. 管理员对大量重复简单的网站浏览行为进行统计分析
-
-4. 如果用户只下载网页，没有后续的js、css请求，那么很被判定为爬虫
-
-5. 在前端页面设置陷阱来发现爬虫，例如通过一些css对用户隐藏的链接，只有爬虫可以访问
-
-6. 其他
-当网站(管理人员)发现异常访问，并判断为爬虫时，也有许多的反制措施，比如：
-
-***通过 UserAgent***
-
-假设我们已经确定了2类爬虫的UserAgent,分别是 Nutch 和 Scrapy
-
-```
-UserAgent:Nutch
-UserAgent:Scrapy
-```
-
-对应反爬虫的 .htaccess 文件定义：
-```
-BrowserMatchNoCase Nutch bad_bot
-BrowserMatchNoCase Scrapy bad_bot
-Order Deny,Allow
-Deny from env=bad_bot
-```
-这里，Nutch 和 Scrapy 为禁止的key,bad_bot为定义的环境变量。
-
-当然部分网站在请求头之中除了需要添加 UserAgent,还需要添加其他参数，如  X-Forwarded-For 与 Referer。
-
-***启用 JavaScript***
-
-大量使用动态页面，使得爬取难度增加，常规手段只能拿到一个基本的html页面，获取不到重要信息。
-
-同时，即使爬虫采用了Web环境来渲染网页，也会大大增加爬虫的负担与爬取时间
-同时，采用动态加载技术，对服务器的负担也会减轻。
-
-***基于流量的拒绝***
-
-在 Apache 之中开启带宽限制模块 LoadModule bw_module ，设置访问的最大带宽，比如每个ip最多3个连接，最大1MB/s，在 mod_bw.so 之中设置：
-
-```
-BandWidthModule On
-ForceBandWidthModule On
-BandWidth all 1024000
-MinBandwidth all -l
-MaxConnection all 3
-```
-```
-#<Location/modbw>
-#  SetHandler modbw-handler
-#</Location>
-```
-
-***在iptables中进行控制***
-
-```
-syntax
-/sbin/iptables -A INPUT -p tcp --syn --dport $port -m connlimit
---connlimit-above N -j REJECT --reject-with tcp-reset
-
-Example: Limit HTTP Connections Per IP / Host
-/sbin/iptables -A INPUT -p tcp --syn --dport 80 -m connlimit --
-connlimit-above 20 -j REJECT --reject-with tcp-reset
-
-Example: Limit HTTP Connections Per IP / Host Per Second
-iptables -A INPUT -m state --state RELATED,ESTABLISHED -m
-limit --limit 10/second --limit-burst 20 -j ACCEPT
-```
-
-当收到20个数据包后，触发访问频次限制，此时每秒最多10次连接请求，即单位时间为 100ms；
-
-如果100ms内没有收到请求，系统触发的条件就+1，也就是说如果1s钟内停止发送数据，则再次建立10次连接之内都不会激活单位计数限制。
-
-***投毒***
-
-在不影响正常业务开展的前提下，网站可能会输出假数据，让爬虫知难而退。
-
-### 3. 如何应对反爬虫
 很多爬虫，在一开始都能正常运行，不过有时候，你可能会很不幸地发现爬虫报错了，当我们确认网页结构没有发生变动，网络连接正常时，程序发生错误就很可能是因为我们被 ban 了，那怎么发现自己可能被网站识别了？
 
 当你在页面看到如下关键字时，爬虫基本上就已经暴露了：
@@ -132,11 +16,12 @@ Frequent response with HTTP 404, 301 or 50x errors
 429 Too Many Requests
 503 Service Unavailable
 ```
-所以，为了构建一个健壮的爬虫，我们还有很多的工作要做，下面我们举例说明一下：
+所以，如何构建一个健壮的爬虫，就显得尤为重要了。
 
-#### a. 动态ip切换技术
+### 1. IP/网络层 
+大多数网站都是针对单一ip的异常行为，来采取反爬虫措施，所以我们可以通过改变ip来规避反爬，一般而言，利用代理服务器(HTTP/SOCKET)进行源IP更改，这是最简单易行的方式。
 
-大多数网站都是针对单一ip的异常行为，来采取反爬虫措施，所以我们可以通过改变ip来规避反爬，除了使用网络代理，我们还可以：
+当然，除了使用网络代理，我们还可以自己实现动态ip切换：
 
 1. 模拟路由器登录
 2. 通过postman 查找路由器的断线、重连接口
@@ -167,6 +52,8 @@ Authorization: Basic YWRtaW46cm9vdGFkbWlu
 ![](/assets/路由器重连.png)
 
 <br />
+
+### 2. 合理设置 HTTP 请求头内容
 #### b. CSS 相关属性检测
 
 ***nofollow 属性***
