@@ -40,7 +40,7 @@
 * [第四章 数据采集策略](di-si-zhang-shu-ju-cai-ji-ce-lve.md)
   * [4.1-目标站点初步分析](di-si-zhang-shu-ju-cai-ji-ce-lve/41cai-ji-fang-an-she-ji.md)
   * [4.2-爬虫搜索策略](di-si-zhang-shu-ju-cai-ji-ce-lve/42pa-chong-sou-suo-ce-lve.md)
-  * [4.3-初步了解反爬虫](di-si-zhang-shu-ju-cai-ji-ce-lve/43chu-bu-le-jie-fan-pa-chong.md)
+  * [4.3-爬虫对抗技术](di-si-zhang-shu-ju-cai-ji-ce-lve/43chu-bu-le-jie-fan-pa-chong.md)
   * [4.4-基于URL的网页去重](di-si-zhang-shu-ju-cai-ji-ce-lve/45ji-yu-url-de-wang-ye-qu-zhong.md)
 * [第五章 网络请求库](di-wu-zhang-wang-luo-qing-qiu-ku.md)
   * [5.1-使用Urllib网络请求库](di-wu-zhang-wang-luo-qing-qiu-ku/51shi-yong-urllib-wang-luo-qing-qiu-ku.md)
