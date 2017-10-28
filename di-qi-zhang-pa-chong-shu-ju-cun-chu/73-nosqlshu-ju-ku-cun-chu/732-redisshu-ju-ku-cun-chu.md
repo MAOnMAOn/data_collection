@@ -149,7 +149,7 @@ Sorted Set，即有序集合，它相比集合多了一个分数字段，利用�
 | zcount\(name, min, max\) | 返回key为name的zset中score在给定区间的数量 | name:key名 min: 最低score max: 最高score | redis.zcount\('grade', 80, 95\) | 返回key为grade的zset中score在80到95的元素个数 | 2 |
 | zcard\(name\) | 返回key为name的zset的元素个数 | name: key名 | redis.zcard\('grade'\) | 获取key为grade的zset中元素个数 | 3 |
 | zremrangebyrank\(name, min, max\) | 删除key为name的zset中排名在给定区间的元素 | name:key名 min: 最低位次 max: 最高位次 | redis.zremrangebyrank\('grade', 0, 0\) | 删除key为grade的zset中排名第一的元素 | 1，即删除的元素个数 |
-| zremrangebyscore\(name, min, max\) | 删除key为name的zset中score在给定区间的元素 | name:key名 min: 最低score max:最高score | redis.zremrangebyscore\('grade', 80, 90\) | 删除score在80到90之间的元素 | 1，即删除的元素个数 |
+| zremrangebyscore\(name, min, max\) | 删除key为name的zset中score在给定区间的元素 | name:key名 min: 最低score max:最高score | redis.zremrangebyscore\('grade', 80, 90\) | 删除score在80到90之间的元素 | 1，即删除的元素个数 ||
 
 ### 9、Hash操作
 
