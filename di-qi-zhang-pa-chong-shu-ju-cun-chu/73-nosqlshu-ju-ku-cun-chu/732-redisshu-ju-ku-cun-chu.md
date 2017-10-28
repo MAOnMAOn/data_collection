@@ -124,7 +124,7 @@ Set，即集合。Redis 还提供了集合存储，集合中的元素都是不�
 | smove\(src, dst, value\) | 从src对应的set中移除元素并添加到dst对应的set中 | src: 源set dst: 目标set value: 元素值 | redis.smove\('tags', 'tags2', 'Coffee'\) | 从key为tags的set中删除元素Coffee并添加到key为tags2的set | True |
 | scard\(name\) | 返回key为name的set的元素个数 | name: key名 | redis.scard\('tags'\) | 获取key为tags的set中元素个数 | 3 |
 | sismember\(name, value\) | 测试member是否是key为name的set的元素 | name:key值 | redis.sismember\('tags', 'Book'\) | 判断Book是否为key为tags的set元素 | True |
-|  sinter\(keys, \*args\) | 返回所有给定key的set的交集 | keys: key列表  |  redis.sinter\(\['tags', 'tags2'\]\) | 返回key为tags的set和key为tags2的set的交集 | {b'Coffee'} |
+| sinter\(keys, \*args\) | 返回所有给定key的set的交集 | keys: key列表 | redis.sinter\(\['tags', 'tags2'\]\) | 返回key为tags的set和key为tags2的set的交集 | {b'Coffee'} |
 | sinterstore\(dest, keys, \*args\) | 求交集并将交集保存到dest的集合 | dest:结果集合 keys:key列表 | redis.sinterstore\('inttag', \['tags', 'tags2'\]\) | 求key为tags的set和key为tags2的set的交集并保存为inttag | 1 |
 | sunion\(keys, \*args\) | 返回所有给定key的set的并集 | keys: key列表 | redis.sunion\(\['tags', 'tags2'\]\) | 返回key为tags的set和key为tags2的set的并集 | {b'Coffee', b'Book', b'Pen'} |
 | sunionstore\(dest, keys, \*args\) | 求并集并将并集保存到dest的集合 | dest:结果集合 keys:key列表 | redis.sunionstore\('inttag', \['tags', 'tags2'\]\) | 求key为tags的set和key为tags2的set的并集并保存为inttag | 3 |
@@ -137,19 +137,19 @@ Set，即集合。Redis 还提供了集合存储，集合中的元素都是不�
 
 Sorted Set，即有序集合，它相比集合多了一个分数字段，利用它我们可以对集合中的数据进行排序，其用法总结如下：
 
-| 方法 | 作用 | 参数说明 | 示例 | 示例说明 | 示例结果 |
-| --- | --- | --- | --- | --- | --- |
-| zadd\(name, args, \*kwargs\) | 向key为name的zset中添加元素member，score用于排序。如果该元素存在，则更新其顺序 | name: key名 args: 可变参数 | redis.zadd\('grade', 100, 'Bob', 98, 'Mike'\) | 向key为grade的zset中添加Bob，score为100，添加Mike，score为98 | 2，即添加的元素个数 |
-| zrem\(name, \*values\) | 删除key为name的zset中的元素 | name: key名 values: 元素 | redis.zrem\('grade', 'Mike'\) | 从key为grade的zset中删除Mike | 1，即删除的元素个数 |
-| zincrby\(name, value, amount=1\) | 如果在key为name的zset中已经存在元素value，则该元素的score增加amount，否则向该集合中添加该元素，其score的值为amount | name: key名 value: 元素 amount: 增长的score值 | redis.zincrby\('grade', 'Bob', -2\) | key为grade的zset中Bob的score减2 | 98.0，即修改后的值 |
-| zrank\(name, value\) | 返回key为name的zset中元素的排名（按score从小到大排序）即下标 | name: key名 value: 元素值 | redis.zrank\('grade', 'Amy'\) | 得到key为grade的zset中Amy的排名 | 1 |
-| zrevrank\(name, value\) | 返回key为name的zset中元素的倒数排名（按score从大到小排序）即下标 | name: key名 value: 元素值 | redis.zrevrank\('grade', 'Amy'\) | 得到key为grade的zset中Amy的倒数排名 | 2 |
-| zrevrange\(name, start, end, withscores=False\) | 返回key为name的zset（按score从大到小排序）中的index从start到end的所有元素 | name: key值 start: 开始索引 end: 结束索引 withscores: 是否带score | redis.zrevrange\('grade', 0, 3\) | 返回key为grade的zset前四名元素 | \[b'Bob', b'Mike', b'Amy', b'James'\] |
-| zrangebyscore\(name, min, max, start=None, num=None, withscores=False\) | 返回key为name的zset中score在给定区间的元素 | name:key名 min: 最低score max:最高score start: 起始索引 num: 个数 withscores: 是否带score | redis.zrangebyscore\('grade', 80, 95\) | 返回key为grade的zset中score在80和95之间的元素 | \[b'Amy', b'James'\] |
-| zcount\(name, min, max\) | 返回key为name的zset中score在给定区间的数量 | name:key名 min: 最低score max: 最高score | redis.zcount\('grade', 80, 95\) | 返回key为grade的zset中score在80到95的元素个数 | 2 |
-| zcard\(name\) | 返回key为name的zset的元素个数 | name: key名 | redis.zcard\('grade'\) | 获取key为grade的zset中元素个数 | 3 |
-| zremrangebyrank\(name, min, max\) | 删除key为name的zset中排名在给定区间的元素 | name:key名 min: 最低位次 max: 最高位次 | redis.zremrangebyrank\('grade', 0, 0\) | 删除key为grade的zset中排名第一的元素 | 1，即删除的元素个数 |
-| zremrangebyscore\(name, min, max\) | 删除key为name的zset中score在给定区间的元素 | name:key名 min: 最低score max:最高score | redis.zremrangebyscore\('grade', 80, 90\) | 删除score在80到90之间的元素 | 1，即删除的元素个数 ||
+|  | 方法 | 作用 | 参数说明 | 示例 | 示例说明 | 示例结果 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|  | zadd\(name, args, \*kwargs\) | 向key为name的zset中添加元素member，score用于排序。如果该元素存在，则更新其顺序 | name: key名 args: 可变参数 | redis.zadd\('grade', 100, 'Bob', 98, 'Mike'\) | 向key为grade的zset中添加Bob，score为100，添加Mike，score为98 | 2，即添加的元素个数 |
+|  | zrem\(name, \*values\) | 删除key为name的zset中的元素 | name: key名 values: 元素 | redis.zrem\('grade', 'Mike'\) | 从key为grade的zset中删除Mike | 1，即删除的元素个数 |
+|  | zincrby\(name, value, amount=1\) | 如果在key为name的zset中已经存在元素value，则该元素的score增加amount，否则向该集合中添加该元素，其score的值为amount | name: key名 value: 元素 amount: 增长的score值 | redis.zincrby\('grade', 'Bob', -2\) | key为grade的zset中Bob的score减2 | 98.0，即修改后的值 |
+|  | zrank\(name, value\) | 返回key为name的zset中元素的排名（按score从小到大排序）即下标 | name: key名 value: 元素值 | redis.zrank\('grade', 'Amy'\) | 得到key为grade的zset中Amy的排名 | 1 |
+|  | zrevrank\(name, value\) | 返回key为name的zset中元素的倒数排名（按score从大到小排序）即下标 | name: key名 value: 元素值 | redis.zrevrank\('grade', 'Amy'\) | 得到key为grade的zset中Amy的倒数排名 | 2 |
+|  | zrevrange\(name, start, end, withscores=False\) | 返回key为name的zset（按score从大到小排序）中的index从start到end的所有元素 | name: key值 start: 开始索引 end: 结束索引 withscores: 是否带score | redis.zrevrange\('grade', 0, 3\) | 返回key为grade的zset前四名元素 | \[b'Bob', b'Mike', b'Amy', b'James'\] |
+|  | zrangebyscore\(name, min, max, start=None, num=None, withscores=False\) | 返回key为name的zset中score在给定区间的元素 | name:key名 min: 最低score max:最高score start: 起始索引 num: 个数 withscores: 是否带score | redis.zrangebyscore\('grade', 80, 95\) | 返回key为grade的zset中score在80和95之间的元素 | \[b'Amy', b'James'\] |
+|  | zcount\(name, min, max\) | 返回key为name的zset中score在给定区间的数量 | name:key名 min: 最低score max: 最高score | redis.zcount\('grade', 80, 95\) | 返回key为grade的zset中score在80到95的元素个数 | 2 |
+|  | zcard\(name\) | 返回key为name的zset的元素个数 | name: key名 | redis.zcard\('grade'\) | 获取key为grade的zset中元素个数 | 3 |
+|  | zremrangebyrank\(name, min, max\) | 删除key为name的zset中排名在给定区间的元素 | name:key名 min: 最低位次 max: 最高位次 | redis.zremrangebyrank\('grade', 0, 0\) | 删除key为grade的zset中排名第一的元素 | 1，即删除的元素个数 |
+| zremrangebyscore\(name, min, max\) | 删除key为name的zset中score在给定区间的元素 | name:key名 min: 最低score max:最高score | redis.zremrangebyscore\('grade', 80, 90\) | 删除score在80到90之间的元素 | 1，即删除的元素个数 |  
 
 ### 9、Hash操作
 
