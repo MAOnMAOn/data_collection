@@ -47,7 +47,7 @@ osd
 equ
 ```
 
-结果显示其只支持几种语言，如果我们想要安装多国语言还需要安装语言包，官方叫做 tessdata。其下载链接为：https://github.com/tesseract-ocr/tessdata。
+结果显示其只支持几种语言，如果我们想要安装多国语言还需要安装语言包，官方叫做 tessdata。其下载链接为：[https://github.com/tesseract-ocr/tessdata。](https://github.com/tesseract-ocr/tessdata。)  
 利用 Git 命令将其下载下来并迁移到相关目录即可，迁移命令如下：
 
 ```
@@ -55,17 +55,14 @@ git clone https://github.com/tesseract-ocr/tessdata.git
 sudo mv tessdata/* /usr/share/tesseract/tessdata
 ```
 
-现在再次调用 tesseract 命令，即可发现其列出的语言就多了非常多，比如 chi_sim 就代表简体中文，这就证明语言包安装成功了。接下来再安装 Tesserocr 即可，直接使用 Pip 安装：
+现在再次调用 tesseract 命令，即可发现其列出的语言就多了非常多，比如 chi\_sim 就代表简体中文，这就证明语言包安装成功了。接下来再安装 Tesserocr 即可，直接使用 Pip 安装：
 
 `pip3 install tesserocr pillow`
 
 #### （3）对tesseract验证安装
-
-我们可以使用 Tesseract 和 Tesserocr 来分别进行测试。
-下面我们以如下的图片为样例进行测试，如图所示：
-![验证码识别述][1]
-  [1]: https://pic2.zhimg.com/v2-cc6a4ae2d91aefe336570341748d5f99_b.jpg
-
+我们可以使用 Tesseract 和 Tesserocr 来分别进行测试。  
+下面我们以如下的图片为样例进行测试，如图所示：  
+![](https://pic2.zhimg.com/v2-cc6a4ae2d91aefe336570341748d5f99_b.jpg)  
 我们首先用命令行进行测试，将图片下载保存为 image.png，然后用 Tesseract 命令行测试，命令如下：
 
 `tesseract testpic.jpg result -l eng && cat result.txt`
@@ -81,9 +78,9 @@ image = Image.open('testpic.jpg')
 print(tesserocr.image_to_text(image))
 ```
 
-在这里我们首先利用 Image 读取了图片文件，然后调用了 tesserocr 的 image_to_text() 方法，再将将其识别结果输出。
+在这里我们首先利用 Image 读取了图片文件，然后调用了 tesserocr 的 image\_to\_text\(\) 方法，再将将其识别结果输出。
 
-另外我们还可以直接调用 file_to_text() 方法，也可以达到同样的效果：
+另外我们还可以直接调用 file\_to\_text\(\) 方法，也可以达到同样的效果：
 
 ```
 import tesserocr
@@ -94,23 +91,34 @@ print(tesserocr.file_to_text('testpic.jpg'))
 
 `79"”`
 
-成功输出结果，则证明 Tesseract 和 Tesserocr 都已经安装成功。
+成功输出结果，但识别的准确率还有待提升，后面我们还可以进一步学习图片预处理相关知识，以提升识别的准确率。
 
-### 4、相关链接
+### 4、安装 OpencCV 库
+OpenCV 是一个2000年发布的开源计算机视觉库，有进行物体识别、图像分割、人脸识别、动作识别等多种功能，可以在 Linux、Windows、Android、Mac OS等操作系统上运行，以轻量级、高效著称，且提供多种语言接口。
+
+作为业界最常用的开源机器视觉库，OpenCV 可以帮助我们进行图片的一系列预处理，为我们更好地完成验证码识别提供帮助！好了，下面我们就开始安装吧！
+
+
+
+### 5、相关链接
 #### （1）BeautifulSoup
-官方文档：https://www.crummy.com/software/BeautifulSoup/bs4/doc
-中文文档：https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh
-PyPi：https://pypi.python.org/pypi/beautifulsoup4
 
-#### （2）PyQuery 
-GitHub：https://github.com/gawel/pyquery
-PyPi：https://pypi.python.org/pypi/pyquery
-官方文档：http://pyquery.readthedocs.io
+官方文档：[https://www.crummy.com/software/BeautifulSoup/bs4/doc](https://www.crummy.com/software/BeautifulSoup/bs4/doc)  
+中文文档：[https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh](https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh)  
+PyPi：[https://pypi.python.org/pypi/beautifulsoup4](https://pypi.python.org/pypi/beautifulsoup4)
+
+#### （2）PyQuery
+
+GitHub：[https://github.com/gawel/pyquery](https://github.com/gawel/pyquery)  
+PyPi：[https://pypi.python.org/pypi/pyquery](https://pypi.python.org/pypi/pyquery)  
+官方文档：[http://pyquery.readthedocs.io](http://pyquery.readthedocs.io)
 
 #### （3）Tesseroc
-Tesserocr GitHub：https://github.com/sirfz/tesserocr
-Tesserocr PyPi：https://pypi.python.org/pypi/tesserocr
-Tesseract下载地址：http://digi.bib.uni-mannheim.de/tesseract
-Tesseract GitHub：https://github.com/tesseract-ocr/tesseract
-Tesseract 语言包：https://github.com/tesseract-ocr/tessdata
-Tesseract 文档：https://github.com/tesseract-ocr/tesseract/wiki/Documentation
+
+Tesserocr GitHub：[https://github.com/sirfz/tesserocr](https://github.com/sirfz/tesserocr)  
+Tesserocr PyPi：[https://pypi.python.org/pypi/tesserocr](https://pypi.python.org/pypi/tesserocr)  
+Tesseract下载地址：[http://digi.bib.uni-mannheim.de/tesseract](http://digi.bib.uni-mannheim.de/tesseract)  
+Tesseract GitHub：[https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract)  
+Tesseract 语言包：[https://github.com/tesseract-ocr/tessdata](https://github.com/tesseract-ocr/tessdata)  
+Tesseract 文档：[https://github.com/tesseract-ocr/tesseract/wiki/Documentation](https://github.com/tesseract-ocr/tesseract/wiki/Documentation)
+
