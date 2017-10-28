@@ -1,12 +1,13 @@
-## x.x 基于 aiohttp 的异步爬虫(智联招聘)
+## x.x 基于 aiohttp 的异步爬虫\(智联招聘\)
 
 先前，我们已经了解了了异步编程相比与同步编程的巨大优势，这里我们可以基于实现 asyncio/aiohttp 模块，实现一个简单的异步爬虫。
 
 ### 1. 案例来源
+
 可能你已经听过[开源程序架构](http://aosabook.org/en/index.html)系列书籍。今天介绍的爬虫就是改造自[500 Lines or Less中的爬虫项目](https://github.com/aosabook/500lines/tree/master/crawler)。
 
-由于使用了异步的aiohttp与asyncio，性能还是相当不错的。运行时发现一小时可以爬下五万个网页，虽然链家对爬虫很宽容，但是也不能火力全开，最终尝试后发现将每个协程爬取的睡眠时间设置为0.1s比较适中。至于线程池 + requests + bs4 的结构，没有尝试过，不好对比它们的性能差距。
-以下是官网的介绍，Python 版本要求>3.4。500行项目里的爬虫并不爬取网页数据，只是通过搜集每一页的url链接展示了如何结合 asyncio 库使用 aiohttp 这个异步 HTTP 客户端。
+由于使用了异步的aiohttp与asyncio，性能还是相当不错的。运行时发现一小时可以爬下五万个网页，虽然链家对爬虫很宽容，但是也不能火力全开，最终尝试后发现将每个协程爬取的睡眠时间设置为0.1s比较适中。至于线程池 + requests + bs4 的结构，没有尝试过，不好对比它们的性能差距。  
+以下是官网的介绍，Python 版本要求&gt;3.4。500行项目里的爬虫并不爬取网页数据，只是通过搜集每一页的url链接展示了如何结合 asyncio 库使用 aiohttp 这个异步 HTTP 客户端。
 
 ```
 Authors: A. Jesse Jiryu Davis and Guido van Rossum
@@ -31,6 +32,7 @@ Andrew Svetlov, Nikolay Kim, and others.
 ```
 
 ### 2. 爬虫依赖库与全局变量
+
 导入模块
 
 ```
@@ -79,21 +81,22 @@ def __init__(self, roots, max_tries=4, max_tasks=10, _loop=None):
     self.end_at = None
 ```
 
- - self.loop:是事件循环;
- - self.roots:传入的url列表，也就是90个目录页的url，通过迭代器实现;
- - self.max_tries:每个url的最大重试次数，如果几次打开都失败，就忽略掉此页;
- - self.max_tasks:任务数，也就是协程数量;
- - self.urls_queue:是待爬取的url链接队列;
- - self.seen_urls:存储着已经爬取了的页面的集合，用于计算总爬取数量 ;
- - self.session:aiohttp的异步会话，也是需要传入一个事件循环作为参数;
- - self.urls_queue.putnowait():往队列里放入目录页;
- - self.started_at, self.end_at：存放着开始时间与结束时间，用于计算总耗时;
+* self.loop:是事件循环;
+* self.roots:传入的url列表，也就是90个目录页的url，通过迭代器实现;
+* self.max\_tries:每个url的最大重试次数，如果几次打开都失败，就忽略掉此页;
+* self.max\_tasks:任务数，也就是协程数量;
+* self.urls\_queue:是待爬取的url链接队列;
+* self.seen\_urls:存储着已经爬取了的页面的集合，用于计算总爬取数量 ;
+* self.session:aiohttp的异步会话，也是需要传入一个事件循环作为参数;
+* self.urls\_queue.putnowait\(\):往队列里放入目录页;
+* self.started\_at, self.end\_at：存放着开始时间与结束时间，用于计算总耗时;
 
 ### 3. 生产者、消费者模式
+
 一般情况下，多数异步问题都可以套用生产者消费者模型。在这里，创建一个生产者去生产url地址。
 
-run函数比较简单，根据任务数量创建多个work协程用来消费url地址，都传入同一个事件循环;并且赋值初始时间，等待队列完成，再取得结束时间，退出每一个协程。
-每一个work协程都是无限的去从urls_queue中取url地址，网页请求是一个耗时的IO任务，所以被async def定义，一旦进入阻塞立刻就切换另一个协程运行，耗时主要体现在session会话得到response上，而网页解析，处理数据是个CPU密集性计算，但运算量不高，耗时相对更少。
+run函数比较简单，根据任务数量创建多个work协程用来消费url地址，都传入同一个事件循环;并且赋值初始时间，等待队列完成，再取得结束时间，退出每一个协程。  
+每一个work协程都是无限的去从urls\_queue中取url地址，网页请求是一个耗时的IO任务，所以被async def定义，一旦进入阻塞立刻就切换另一个协程运行，耗时主要体现在session会话得到response上，而网页解析，处理数据是个CPU密集性计算，但运算量不高，耗时相对更少。
 
 ```
     async def work(self):
@@ -119,12 +122,14 @@ run函数比较简单，根据任务数量创建多个work协程用来消费url�
 这里我们还可以把数据存储也改成异步存储，比如使用aiomysql 或 twisted。
 
 ### 4. 时间开销
+
 相比于同步模式，异步代码在在时间开销上，表现较佳。耗时为 6.876924 secs 而相同情况下的同步代码耗时则为 68.32336187 secs。
 
-相对于其他并发模式(asyncio + aiohttp + ThreadPoolExecutor 或者 asyncio + aiohttp + ProcessPoolExecutor)，经过本地的简单测试，
+相对于其他并发模式\(asyncio + aiohttp + ThreadPoolExecutor 或者 asyncio + aiohttp + ProcessPoolExecutor\)，经过本地的简单测试，  
 可以感受到原生的 asyncio + aiohttp 是最快的。所以在实际工作中推荐使用 asyncio + aiohttp 。
 
 ### 5. 完整代码
+
 异步代码
 
 ```
@@ -303,3 +308,6 @@ if __name__ == '__main__':
     b = time.time()
     print('总共花了:',b-a)
 ```
+
+
+

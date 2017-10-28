@@ -3,18 +3,21 @@
 之前我们简单地实现了路由器的模拟登录与重启，但在实际的项目之中，频繁的地重启路由器，不见见对路由器正常工作产生影响，可能还会影响其他人的生活与工作，所以我们还需要采取其他方式来获取可用的代理。比如使用高匿代理，关于如何使用付费高匿代理，在相关的商家都会站点给出接入指南，但细心的你可能会发现，在相关的代码实例当中，你可能根本找到 Chromedriver 的接入示例，所以今天我们就简单介绍一下在 Selenium 中为 Chromedriver 添加高匿代理。
 
 ### 1. 案例引入
-默认情况下，Chrome 的 --proxy-server="http://ip:port" 参数不支持设置用户名和密码认证。这样就使得"Selenium + Chrome Driver"无法使用 HTTP Basic Authentication 的HTTP代理。一种变通的方式就是采用IP地址认证，但在国内网络环境下，大多数用户都采用ADSL形式网络接入，IP是变化的，也无法采用IP地址绑定认证。因此迫切需要找到一种让Chrome自动实现HTTP代理用户名密码认证的方案。
+
+默认情况下，Chrome 的 --proxy-server="[http://ip:port](http://ip:port)" 参数不支持设置用户名和密码认证。这样就使得"Selenium + Chrome Driver"无法使用 HTTP Basic Authentication 的HTTP代理。一种变通的方式就是采用IP地址认证，但在国内网络环境下，大多数用户都采用ADSL形式网络接入，IP是变化的，也无法采用IP地址绑定认证。因此迫切需要找到一种让Chrome自动实现HTTP代理用户名密码认证的方案。
 
 Stackoverflow上有人分享了一种利用Chrome插件实现自动代理用户密码认证的方案非常不错，我们可用查看一下[详细内容](http://stackoverflow.com/questions/9888323/how-to-override-basic-authentication-in-selenium2-with-java-using-chrome-driver)。
 
 在这个思路上，我们选择了阿布云代理进行实验，实现了自动化的 Chrome　插件插件，即根据指定的代理 “username:password@ip:port” 自动创建一个 Chrome 代理插件。
 
 ### 2. 代码示例
+
 首先从 github 上下载相应的模板文件：
 
 `git clone https://github.com/RobinDev/Selenium-Chrome-HTTP-Private-Proxy`
 
 然后，在 settings.py 文件之中进行如下配置：
+
 ```
 import random
 
@@ -97,7 +100,7 @@ def get_chrome_proxy_extension(proxy):
 
 
 class TMallSpider(object):
-    
+
     def __init__(self):
         self.display = Display(visible=0)
         self.display.start()
@@ -119,8 +122,11 @@ class TMallSpider(object):
         # UA = self.driver.find_element_by_xpath('//*[@id="rightinfo"]/dl/dd[6]').text
         print({'User-Agent': UA, 'proxy': driver_ip})
         self.driver.quit()
-        
+
 if __name__ == "__main__":
     spider = TMallSpider()
     spider.get_proxy()
 ```
+
+
+
