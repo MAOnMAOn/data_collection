@@ -98,23 +98,38 @@ OpenCV 是一个2000年发布的开源计算机视觉库，有进行物体识别
 
 作为业界最常用的开源机器视觉库，OpenCV 可以帮助我们进行图片的一系列预处理，为我们更好地完成验证码识别提供帮助！好了，下面我们就开始安装吧！
 
+当前，python3 下的 opencv 库有两个版本，opencv-python 与 opencv-contrib-python 后者相比于前者，提供了更加强大的算法支持，不过一些国家的商业用途可能受到限制，因为contrib模块包含一些非免费/专利算法。
 
+#### (1) pip 安装
+好了，现在我们开始安装：
+
+`pip install opencv-python`
+
+如果要安装 opencv-contrib-python ，强烈建议你先卸载 opencv-python ，再进行安装：
+
+`pip uninstall opencv-python && pip install opencv-contrib-python`
+
+#### (2) conda 安装
+如果你的主机有了 conda 环境，你也可以使用 conda 命令进行安装：
+
+`conda install opencv`
+
+#### (3) 验证安装
+
+`python -c "import cv2;print(help(cv2.CascadeClassifier))"`
 
 ### 5、相关链接
-#### （1）BeautifulSoup
-
+#### (1) BeautifulSoup
 官方文档：[https://www.crummy.com/software/BeautifulSoup/bs4/doc](https://www.crummy.com/software/BeautifulSoup/bs4/doc)  
 中文文档：[https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh](https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh)  
 PyPi：[https://pypi.python.org/pypi/beautifulsoup4](https://pypi.python.org/pypi/beautifulsoup4)
 
-#### （2）PyQuery
-
+#### (2) PyQuery
 GitHub：[https://github.com/gawel/pyquery](https://github.com/gawel/pyquery)  
 PyPi：[https://pypi.python.org/pypi/pyquery](https://pypi.python.org/pypi/pyquery)  
 官方文档：[http://pyquery.readthedocs.io](http://pyquery.readthedocs.io)
 
-#### （3）Tesseroc
-
+#### (3) Tesseroc
 Tesserocr GitHub：[https://github.com/sirfz/tesserocr](https://github.com/sirfz/tesserocr)  
 Tesserocr PyPi：[https://pypi.python.org/pypi/tesserocr](https://pypi.python.org/pypi/tesserocr)  
 Tesseract下载地址：[http://digi.bib.uni-mannheim.de/tesseract](http://digi.bib.uni-mannheim.de/tesseract)  
@@ -122,3 +137,7 @@ Tesseract GitHub：[https://github.com/tesseract-ocr/tesseract](https://github.c
 Tesseract 语言包：[https://github.com/tesseract-ocr/tessdata](https://github.com/tesseract-ocr/tessdata)  
 Tesseract 文档：[https://github.com/tesseract-ocr/tesseract/wiki/Documentation](https://github.com/tesseract-ocr/tesseract/wiki/Documentation)
 
+#### (4) OpencCV
+OpencCV GitHub：https://github.com/opencv/opencv/tree/master/samples/python
+OpencCV PyPi：https://pypi.python.org/pypi/opencv-python
+OpencCV 官方：https://docs.opencv.org/master/
