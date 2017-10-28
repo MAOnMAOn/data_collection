@@ -124,14 +124,14 @@ Set，即集合。Redis 还提供了集合存储，集合中的元素都是不�
 | smove\(src, dst, value\) | 从src对应的set中移除元素并添加到dst对应的set中 | src: 源set dst: 目标set value: 元素值 | redis.smove\('tags', 'tags2', 'Coffee'\) | 从key为tags的set中删除元素Coffee并添加到key为tags2的set | True |
 | scard\(name\) | 返回key为name的set的元素个数 | name: key名 | redis.scard\('tags'\) | 获取key为tags的set中元素个数 | 3 |
 | sismember\(name, value\) | 测试member是否是key为name的set的元素 | name:key值 | redis.sismember\('tags', 'Book'\) | 判断Book是否为key为tags的set元素 | True |
-|  | sinter\(keys, \*args\) | 返回所有给定key的set的交集 | keys: key列表    redis.sinter\(\['tags', 'tags2'\]\) | 返回key为tags的set和key为tags2的set的交集 | {b'Coffee'} |
+|  sinter\(keys, \*args\) | 返回所有给定key的set的交集 | keys: key列表  |  redis.sinter\(\['tags', 'tags2'\]\) | 返回key为tags的set和key为tags2的set的交集 | {b'Coffee'} |
 | sinterstore\(dest, keys, \*args\) | 求交集并将交集保存到dest的集合 | dest:结果集合 keys:key列表 | redis.sinterstore\('inttag', \['tags', 'tags2'\]\) | 求key为tags的set和key为tags2的set的交集并保存为inttag | 1 |
 | sunion\(keys, \*args\) | 返回所有给定key的set的并集 | keys: key列表 | redis.sunion\(\['tags', 'tags2'\]\) | 返回key为tags的set和key为tags2的set的并集 | {b'Coffee', b'Book', b'Pen'} |
 | sunionstore\(dest, keys, \*args\) | 求并集并将并集保存到dest的集合 | dest:结果集合 keys:key列表 | redis.sunionstore\('inttag', \['tags', 'tags2'\]\) | 求key为tags的set和key为tags2的set的并集并保存为inttag | 3 |
 | sdiff\(keys, \*args\) | 返回所有给定key的set的差集 | keys: key列表 | redis.sdiff\(\['tags', 'tags2'\]\) | 返回key为tags的set和key为tags2的set的差集 | {b'Book', b'Pen'} |
 | sdiffstore\(dest, keys, \*args\) | 求差集并将差集保存到dest的集合 | dest:结果集合 keys:key列表 | redis.sdiffstore\('inttag', \['tags', 'tags2'\]\) | 求key为tags的set和key为tags2的set的差集并保存为inttag | 3 |
 | smembers\(name\) | 返回key为name的set的所有元素 | name: key名 | redis.smembers\('tags'\) | 返回key为tags的set的所有元素 | {b'Pen', b'Book', b'Coffee'} |
-|  | srandmember\(name\) | 随机返回key为name的set的一个元素，但不删除元素 | name: key值 | redis.srandmember\('tags'\) | 随机返回key为tags的set的一个元素 |
+|   srandmember\(name\) | 随机返回key为name的set的一个元素，但不删除元素 | name: key值 | redis.srandmember\('tags'\) | 随机返回key为tags的set的一个元素 |
 
 ### 8、Sorted Set操作
 
