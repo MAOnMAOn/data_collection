@@ -83,6 +83,8 @@
   * [9.3-构建代理池](di-jiu-zhang-shi-yong-wang-luo-dai-li/93gou-jian-dai-li-chi.md)
 * [第十章 模拟登录与验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma.md)
   * [10.1-模拟登录豆瓣](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/101mo-ni-deng-lu-dou-ban.md)
+  * [10.x-识别图片验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/102shi-bie-tu-pian-yan-zheng-ma.md)
+    * [识别的具体流程](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/102shi-bie-tu-pian-yan-zheng-ma/shi-bie-de-ju-ti-liu-cheng.md)
 * [第十一章 任务队列](di-shi-yi-zhang-ren-wu-dui-lie.md)
 * 第十二章 采集APP数据
 * 第十三章 Scrapy的使用
