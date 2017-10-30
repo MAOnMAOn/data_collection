@@ -89,11 +89,11 @@
 * [第十一章 任务队列](di-shi-yi-zhang-ren-wu-dui-lie.md)
 * 第十二章 采集APP数据
 * 第十三章 Scrapy的使用
-* [第XX章 分布式爬虫](di-xx-zhang-fen-bu-shi-pa-chong.md)
 * [第XX章 爬虫的监控](di-shi-yi-zhang-pa-chong-de-jian-kong.md)
   * [XX.2-ELK日志分析监控系统](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong.md)
     * [XX.2.1-安装配置ELK](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/xx21an-zhuang-pei-zhi-elk.md)
     * [XX.2.2-安装ElasticSearch插件](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/xx22an-zhuang-elasticsearch-chuang-jian.md)
+* [第XX章 分布式爬虫](di-xx-zhang-fen-bu-shi-pa-chong.md)
 * [第XX章 部分代码示例](di-xx-zhang-bu-fen-dai-ma-shi-li.md)
   * [多进程爬虫简单案例](di-xx-zhang-bu-fen-dai-ma-shi-li/duo-jin-cheng-pa-chong-jian-dan-an-li.md)
   * [基于aiohttp的异步爬虫](di-xx-zhang-bu-fen-dai-ma-shi-li/ji-yu-aiohttp-de-yi-bu-pa-chong.md)
