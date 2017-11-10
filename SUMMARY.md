@@ -1,7 +1,7 @@
 # Summary
 
 * [前言](README.md)
-  * 目录
+  * [目录](目录.md)
 * [第一章 开发环境配置](di-yi-zhang-kai-fa-huan-jing-pei-zhi.md)
   * [1.1-Centos7安装Python3](di-yi-zhang-kai-fa-huan-jing-pei-zhi/centos7an-zhuang-python3.md)
   * [1.2-安装网络请求库](di-yi-zhang-kai-fa-huan-jing-pei-zhi/12an-zhuang-wang-luo-qing-qiu-ku.md)
@@ -77,18 +77,6 @@
     * [8.1.2-提取Ajax数据](di-ba-zhang-dong-tai-ye-mian-pa-chong/81huo-qu-ajax-shu-ju/812ti-qu-ajax-shu-ju.md)
   * [8.2-Selenium的基本使用](di-ba-zhang-dong-tai-ye-mian-pa-chong/82-seleniumde-ji-ben-shi-yong.md)
   * [8.3-使用Splash](di-ba-zhang-dong-tai-ye-mian-pa-chong/83shi-yong-splash.md)
-* [第七章 爬虫数据存储](di-qi-zhang-pa-chong-shu-ju-cun-chu.md)
-  * [7.1-文件存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu.md)
-    * [7.1.1-TXT文本存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu/711-txtwen-ben-cun-chu.md)
-    * [7.1.2-Json文件存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu/712-jsonwen-jian-cun-chu.md)
-    * [7.1.3-CSV数据存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu/713-csvshu-ju-cun-chu.md)
-  * [7.2-关系型数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/72guan-xi-xing-shu-ju-ku.md)
-    * [7.2.1-利用PyMySQL进行存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/72guan-xi-xing-shu-ju-ku/721li-yong-pymysql-jin-xing-cun-chu.md)
-    * [7.2.2-SqlAlchemy简单使用](di-qi-zhang-pa-chong-shu-ju-cun-chu/72guan-xi-xing-shu-ju-ku/722-sqlalchemyshu-ju-ku-cao-zuo.md)
-  * [7.3-NoSQL数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu.md)
-    * [7.3.1-操作Mongodb数据库](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/731cao-zuo-mongodb-shu-ju-ku.md)
-    * [7.3.2-Redis数据库存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/73-nosqlshu-ju-ku-cun-chu/732-redisshu-ju-ku-cun-chu.md)
-    * 7.3.3-ElasticSearch数据库存储
 * [第十章 模拟登录与验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma.md)
   * [10.1-模拟登录豆瓣](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/101mo-ni-deng-lu-dou-ban.md)
   * [10.x-识别图片验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/102shi-bie-tu-pian-yan-zheng-ma.md)
