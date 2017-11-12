@@ -164,6 +164,20 @@ security:
 
 `sudo service mongod restart`
 
+客户端连接后，我们可以进行验证，输入命令进入数据库：
+
+`mongo --port 27017`
+
+```
+> use admin
+switched to db admin
+> db.auth("admin", "admin")
+1 // 输出1表示验证成功
+> show dbs
+admin  0.000GB
+local  0.000GB
+```
+
 这样远程连接和权限认证就配置完成了。
 
 #### （3）mongodb的可视化工具
