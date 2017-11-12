@@ -20,6 +20,10 @@ client = pymongo.MongoClient(host='localhost', port=27017)
 
 `client = MongoClient('mongodb://localhost:27017/')`
 
+或者：
+
+`client = pymongo.MongoClient('mongodb://user:password@ip:27017')`
+
 可以达到同样的连接效果。
 
 ### 3、 指定数据库
