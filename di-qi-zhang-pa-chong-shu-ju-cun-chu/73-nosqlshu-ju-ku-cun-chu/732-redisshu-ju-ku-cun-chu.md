@@ -131,7 +131,7 @@ Set，即集合。Redis 还提供了集合存储，集合中的元素都是不�
 | sdiff\(keys, \*args\) | 返回所有给定key的set的差集 | keys: key列表 | redis.sdiff\(\['tags', 'tags2'\]\) | 返回key为tags的set和key为tags2的set的差集 | {b'Book', b'Pen'} |
 | sdiffstore\(dest, keys, \*args\) | 求差集并将差集保存到dest的集合 | dest:结果集合 keys:key列表 | redis.sdiffstore\('inttag', \['tags', 'tags2'\]\) | 求key为tags的set和key为tags2的set的差集并保存为inttag | 3 |
 | smembers\(name\) | 返回key为name的set的所有元素 | name: key名 | redis.smembers\('tags'\) | 返回key为tags的set的所有元素 | {b'Pen', b'Book', b'Coffee'} |
-|  | srandmember\(name\) | 随机返回key为name的set的一个元素，但不删除元素 | name: key值 | redis.srandmember\('tags'\) | 随机返回key为tags的set的一个元素 |
+| srandmember\(name\) | 随机返回key为name的set的一个元素，但不删除元素 | name: key值 | redis.srandmember\('tags'\) | 随机返回key为tags的set的一个元素 | '' |
 
 ### 8、Sorted Set操作
 
