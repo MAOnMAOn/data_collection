@@ -81,6 +81,7 @@
   * [9.1-Selenium为Chrome添加高匿代理](di-jiu-zhang-shi-yong-wang-luo-dai-li/92-seleniumwei-chrome-tian-jia-gao-ni-dai-li.md)
   * [9.3-使用adsl代理](di-jiu-zhang-shi-yong-wang-luo-dai-li/93shi-yong-adsl-dai-li.md)
     * [9.3.1-路由器断线重连](di-jiu-zhang-shi-yong-wang-luo-dai-li/93shi-yong-adsl-dai-li/931lu-you-qi-duan-xian-zhong-lian.md)
+    * [9.3.2-多WAN口路由器拨号](di-jiu-zhang-shi-yong-wang-luo-dai-li/93shi-yong-adsl-dai-li/932duo-wan-kou-lu-you-qi-bo-hao.md)
 * [第十章 模拟登录与验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma.md)
   * [10.1-模拟登录豆瓣](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/101mo-ni-deng-lu-dou-ban.md)
   * [10.x-识别图片验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/102shi-bie-tu-pian-yan-zheng-ma.md)
