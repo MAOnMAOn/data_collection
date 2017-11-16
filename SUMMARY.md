@@ -59,6 +59,8 @@
   * [6.4-LXML的简单使用](di-liu-zhang-wang-ye-shu-ju-jie-xi/64-lxmlde-jian-dan-shi-yong.md)
   * [6.5-BeautifulSoup的使用](di-liu-zhang-wang-ye-shu-ju-jie-xi/65-beautifulsoupde-shi-yong.md)
   * [6.6-PyQuery解析库](di-liu-zhang-wang-ye-shu-ju-jie-xi/66-pyqueryjie-xi-ku.md)
+  * [6.7-PyQuery多进程爬虫](di-xx-zhang-bu-fen-dai-ma-shi-li/duo-jin-cheng-pa-chong-jian-dan-an-li.md)
+  * [基于aiohttp的异步爬虫](di-xx-zhang-bu-fen-dai-ma-shi-li/ji-yu-aiohttp-de-yi-bu-pa-chong.md)
 * [第七章 爬虫数据存储](di-qi-zhang-pa-chong-shu-ju-cun-chu.md)
   * [7.1-文件存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu.md)
     * [7.1.1-TXT文本存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu/711-txtwen-ben-cun-chu.md)
@@ -96,7 +98,4 @@
     * [XX.2.1-安装配置ELK](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/xx21an-zhuang-pei-zhi-elk.md)
     * [XX.2.2-安装ElasticSearch插件](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/xx22an-zhuang-elasticsearch-chuang-jian.md)
 * [第十五章 分布式爬虫](di-xx-zhang-fen-bu-shi-pa-chong.md)
-* [第XX章 部分代码示例](di-xx-zhang-bu-fen-dai-ma-shi-li.md)
-  * [多进程爬虫简单案例](di-xx-zhang-bu-fen-dai-ma-shi-li/duo-jin-cheng-pa-chong-jian-dan-an-li.md)
-  * [基于aiohttp的异步爬虫](di-xx-zhang-bu-fen-dai-ma-shi-li/ji-yu-aiohttp-de-yi-bu-pa-chong.md)
 

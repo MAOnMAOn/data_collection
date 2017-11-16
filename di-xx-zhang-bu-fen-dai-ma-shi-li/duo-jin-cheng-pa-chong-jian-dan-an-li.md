@@ -1,6 +1,6 @@
-## XX.X 多进程爬虫简单案例---(目标站点：智联招聘)
+## 6.7 PyQurey 多进程爬虫   ---\(目标站点：智联招聘\)
 
-之前我们介绍了 Python3 下的多进程包，multiprocessing，现在我们就以智联招聘为目标站点，结合先前所介绍的相关知识(requests，pyquery)，进行简单的数据爬取。代码非常简单，所以没有做过多的说明(毕竟知乎上一大堆)。
+之前我们介绍了 Python3 下的多进程包，multiprocessing，现在我们就以智联招聘为目标站点，结合先前所介绍的相关知识\(requests，pyquery\)，进行简单的数据爬取。代码非常简单，所以没有做过多的说明\(毕竟知乎上一大堆\)。
 
 ### 1. 请求网页，获取 html 文本
 
@@ -26,7 +26,8 @@ def request_url(url):
 首先，导入模块，其中 sqlalchemy 是 Python 中一个操作数据库的驱动。我们在这里简单添加了用户代理，以获取网页的 html 文本。
 
 ### 2. 通过 PyQuery 进行解析与数据选取
-在 parse_html 函数中，我们通过 CSS 选择器进行数据选取，生成了一个嵌套列表。
+
+在 parse\_html 函数中，我们通过 CSS 选择器进行数据选取，生成了一个嵌套列表。
 
 ```
 def parse_html(wb_data):
@@ -38,6 +39,7 @@ def parse_html(wb_data):
 ```
 
 ### 3. 通过 Pandas 进行简单的数据合并
+
 首先，通过 pandas 把列表变成对应的数据框，然后将数据框依据索引合并成大表。
 
 ```
@@ -50,7 +52,8 @@ def data_processing(parse_dict):
 ```
 
 ### 4. 数据存储
-这里我们使用 sqlalchemy 进行 ORM 操作, 在 Dataframe 的 to_sql 方法之中的 if_exists 选项填入追加选项，自动创建并添加数据。同时一次性存入1000条数据。
+
+这里我们使用 sqlalchemy 进行 ORM 操作, 在 Dataframe 的 to\_sql 方法之中的 if\_exists 选项填入追加选项，自动创建并添加数据。同时一次性存入1000条数据。
 
 ```
 def save_into_mysql(dataframe,table_name):
@@ -61,7 +64,8 @@ def save_into_mysql(dataframe,table_name):
 ```
 
 ### 5. 采用进程池
-通过 multiprocessing 中的 cpu_count 方法，获取本地主机 cpu 核心数，这里的 run 函数是前面各个过程的集成，我们通过 pool.map 把网址列表中的链接进行爬取。
+
+通过 multiprocessing 中的 cpu\_count 方法，获取本地主机 cpu 核心数，这里的 run 函数是前面各个过程的集成，我们通过 pool.map 把网址列表中的链接进行爬取。
 
 ```
     pool = Pool(processes = cpu_count())
@@ -129,8 +133,8 @@ if __name__ == '__main__':
     print('总共花了:',b-a)
 ```
 
-
 ### 7. 引入 ProcessPoolExecutor
+
 这里我们引入 ProcessPoolExecutor ，对 multiprocessing.Pool 进行进一步封装，首先，我们需要导入相应模块：
 
 `from concurrent.futures import ProcessPoolExecutor`
@@ -150,3 +154,4 @@ if __name__ == '__main__':
 ```
 
 在代码量减少的同时，运行效率变化不大，总共花了: 11.856663465499878 爬取了3019个条目。当然，你也可以尝试一下 concurrent.futures 中的 ThreadPoolExecutor 模块，用法基本相同，总共花了: 9.865242958068848！我们将会在下一节说明该模块的简单使用。
+
