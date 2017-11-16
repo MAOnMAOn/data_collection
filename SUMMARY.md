@@ -60,7 +60,7 @@
   * [6.5-BeautifulSoup的使用](di-liu-zhang-wang-ye-shu-ju-jie-xi/65-beautifulsoupde-shi-yong.md)
   * [6.6-PyQuery解析库](di-liu-zhang-wang-ye-shu-ju-jie-xi/66-pyqueryjie-xi-ku.md)
   * [6.7-PyQuery多进程爬虫](di-xx-zhang-bu-fen-dai-ma-shi-li/duo-jin-cheng-pa-chong-jian-dan-an-li.md)
-  * [基于aiohttp的异步爬虫](di-xx-zhang-bu-fen-dai-ma-shi-li/ji-yu-aiohttp-de-yi-bu-pa-chong.md)
+  * [6.8-基于aiohttp的异步爬虫](di-xx-zhang-bu-fen-dai-ma-shi-li/ji-yu-aiohttp-de-yi-bu-pa-chong.md)
 * [第七章 爬虫数据存储](di-qi-zhang-pa-chong-shu-ju-cun-chu.md)
   * [7.1-文件存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu.md)
     * [7.1.1-TXT文本存储](di-qi-zhang-pa-chong-shu-ju-cun-chu/71wen-jian-cun-chu/711-txtwen-ben-cun-chu.md)
