@@ -79,6 +79,7 @@
   * [8.3-使用Splash](di-ba-zhang-dong-tai-ye-mian-pa-chong/83shi-yong-splash.md)
 * [第九章 使用网络代理](di-jiu-zhang-shi-yong-wang-luo-dai-li.md)
   * [9.1-Selenium为Chrome添加高匿代理](di-jiu-zhang-shi-yong-wang-luo-dai-li/92-seleniumwei-chrome-tian-jia-gao-ni-dai-li.md)
+  * 9.2-构建代理池
   * [9.3-使用adsl代理](di-jiu-zhang-shi-yong-wang-luo-dai-li/93shi-yong-adsl-dai-li.md)
     * [9.3.1-路由器断线重启](di-jiu-zhang-shi-yong-wang-luo-dai-li/93shi-yong-adsl-dai-li/931lu-you-qi-duan-xian-zhong-lian.md)
     * [9.3.2-多WAN口路由器拨号](di-jiu-zhang-shi-yong-wang-luo-dai-li/93shi-yong-adsl-dai-li/932duo-wan-kou-lu-you-qi-bo-hao.md)
