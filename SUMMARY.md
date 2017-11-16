@@ -80,14 +80,14 @@
 * [第九章 使用网络代理](di-jiu-zhang-shi-yong-wang-luo-dai-li.md)
   * [9.1-Selenium为Chrome添加高匿代理](di-jiu-zhang-shi-yong-wang-luo-dai-li/92-seleniumwei-chrome-tian-jia-gao-ni-dai-li.md)
   * [9.3-使用adsl代理](di-jiu-zhang-shi-yong-wang-luo-dai-li/93shi-yong-adsl-dai-li.md)
-    * [9.3.1-路由器断线重连](di-jiu-zhang-shi-yong-wang-luo-dai-li/93shi-yong-adsl-dai-li/931lu-you-qi-duan-xian-zhong-lian.md)
+    * [9.3.1-路由器断线重启](di-jiu-zhang-shi-yong-wang-luo-dai-li/93shi-yong-adsl-dai-li/931lu-you-qi-duan-xian-zhong-lian.md)
     * [9.3.2-多WAN口路由器拨号](di-jiu-zhang-shi-yong-wang-luo-dai-li/93shi-yong-adsl-dai-li/932duo-wan-kou-lu-you-qi-bo-hao.md)
 * [第十章 模拟登录与验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma.md)
   * [10.1-模拟登录豆瓣](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/101mo-ni-deng-lu-dou-ban.md)
   * [10.x-识别图片验证码](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/102shi-bie-tu-pian-yan-zheng-ma.md)
     * [灰度化与二值化](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/102shi-bie-tu-pian-yan-zheng-ma/shi-bie-de-ju-ti-liu-cheng.md)
     * [噪点处理](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/102shi-bie-tu-pian-yan-zheng-ma/zao-dian-chu-li.md)
-* [第十一章 任务队列](di-shi-yi-zhang-ren-wu-dui-lie.md)
+* [第十一章 消息队列](di-shi-yi-zhang-ren-wu-dui-lie.md)
 * 第十二章 采集APP数据
 * 第十三章 Scrapy的使用
 * [第XX章 爬虫的监控](di-shi-yi-zhang-pa-chong-de-jian-kong.md)
