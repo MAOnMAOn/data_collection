@@ -89,9 +89,9 @@ ITEM_PIPELINES = {
 ![](/assets/ggggg.png)
 
 ##### Feeding a Spider from Redis
-1. 在项目的 settings.py 文件中，配置好 redis 数据库的相关信息。
+* 在项目的 settings.py 文件中，配置好 redis 数据库的相关信息。
 
-2. 改写 spiders/ 目录下的 myspider.py
+* 改写 spiders/ 目录下的 myspider.py
 
 ```
 from scrapy_redis.spiders import RedisSpider
@@ -104,11 +104,11 @@ class MySpider(RedisSpider):
         pass
 ```
 
-3. 运行爬虫
+* 运行爬虫
 
 `scrapy runspider myspider.py` 或　`scrapy crawl myspider`
 
-4. 把链接推送到 reids 之中
+* 把链接推送到 reids 之中
 
 `redis-cli lpush myspider:start_urls https://google.com`
 
