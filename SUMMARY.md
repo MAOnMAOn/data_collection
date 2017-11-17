@@ -99,4 +99,5 @@
     * [14.2.1-安装配置ELK](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/xx21an-zhuang-pei-zhi-elk.md)
     * [14.2.2-安装ElasticSearch插件](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/xx22an-zhuang-elasticsearch-chuang-jian.md)
 * [第十五章 分布式爬虫](di-xx-zhang-fen-bu-shi-pa-chong.md)
+  * [scrapy分布式原理](di-xx-zhang-fen-bu-shi-pa-chong/scrapyfen-bu-shi-yuan-li.md)
 
