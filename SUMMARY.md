@@ -43,6 +43,7 @@
   * [4.2-爬虫搜索策略](di-si-zhang-shu-ju-cai-ji-ce-lve/42pa-chong-sou-suo-ce-lve.md)
   * [4.3-爬虫对抗技术](di-si-zhang-shu-ju-cai-ji-ce-lve/43chu-bu-le-jie-fan-pa-chong.md)
   * [4.4-基于URL的网页去重](di-si-zhang-shu-ju-cai-ji-ce-lve/45ji-yu-url-de-wang-ye-qu-zhong.md)
+  * [4.5-常规数据采集策略](di-si-zhang-shu-ju-cai-ji-ce-lve/45chang-gui-shu-ju-cai-ji-ce-lve.md)
 * [第五章 网络请求库](di-wu-zhang-wang-luo-qing-qiu-ku.md)
   * [5.1-使用Urllib网络请求库](di-wu-zhang-wang-luo-qing-qiu-ku/51shi-yong-urllib-wang-luo-qing-qiu-ku.md)
     * [5.1.1-发送请求](di-wu-zhang-wang-luo-qing-qiu-ku/51shi-yong-urllib-wang-luo-qing-qiu-ku/511fa-song-qing-qiu.md)
