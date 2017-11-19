@@ -92,6 +92,7 @@
     * [灰度化与二值化](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/102shi-bie-tu-pian-yan-zheng-ma/shi-bie-de-ju-ti-liu-cheng.md)
     * [噪点处理](di-shi-zhang-mo-ni-deng-lu-yu-yan-zheng-ma/102shi-bie-tu-pian-yan-zheng-ma/zao-dian-chu-li.md)
 * [第十一章 消息队列](di-shi-yi-zhang-ren-wu-dui-lie.md)
+  * [11.1-Redis消息队列](di-shi-yi-zhang-ren-wu-dui-lie/111-redisxiao-xi-dui-lie.md)
 * 第十二章 采集APP数据
 * 第十三章 Scrapy的使用
 * [第十四章 爬虫的监控](di-shi-yi-zhang-pa-chong-de-jian-kong.md)
