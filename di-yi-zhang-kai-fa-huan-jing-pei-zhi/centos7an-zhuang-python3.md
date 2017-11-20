@@ -57,6 +57,22 @@ Anaconda 同样支持 Linux，其官方下载链接为：https://www.continuum.i
 使用说明链接为：https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/，
 我们可以选择需要的版本进行下载，速度相比官网会快很多。
 
+首先，下载镜像文件：
+
+`curl -O https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+
+然后，把文件安装到指定文件目录下：
+
+`sudo bash Miniconda3-latest-Linux-x86_64.sh -bfp /usr/local/conda3/`
+
+编辑当前用户相关环境变量文件 .bashrc，写入如下内容，并通过 source 生效：
+
+`export PATH="/usr/local/conda3/bin:$PATH"`
+
+最后，对当前用户设置相应权限，即可完成整个安装流程：
+
+`sudo chown -R  username /usr/local/conda3/`
+
 ### 4. 相关链接
 
 官方网站：http://python.org
