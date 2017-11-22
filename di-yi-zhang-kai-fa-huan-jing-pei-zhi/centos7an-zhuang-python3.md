@@ -95,7 +95,6 @@ trusted-host=mirrors.aliyun.com
 ```
 
 ### 5. 相关链接
-
 官方网站：http://python.org
 下载地址：https://www.python.org/downloads
 第三方库：https://pypi.python.org/pypi
