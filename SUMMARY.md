@@ -29,7 +29,7 @@
   * [2.10-Socket编程原理](di-er-zhang-pa-chong-wang-luo-ji-chu/210-socketbian-cheng-yuan-li.md)
     * [2.10.1-Socket编程实例](di-er-zhang-pa-chong-wang-luo-ji-chu/210-socketbian-cheng-yuan-li/2101-socketbian-cheng-shi-li.md)
   * [2.11-爬虫基本原理](di-er-zhang-pa-chong-wang-luo-ji-chu/210pa-chong-ji-ben-yuan-li.md)
-* [第三章 Python并行编程基础](di-san-zhang-python-bing-fa-bian-cheng.md)
+* [第三章 使用并行编程](di-san-zhang-python-bing-fa-bian-cheng.md)
   * [3.1-并行算法设计](di-san-zhang-python-bing-fa-bian-cheng/31bing-xing-suan-fa-she-ji.md)
   * [3.2-Python中的线程](di-san-zhang-python-bing-fa-bian-cheng/32-pythonzhong-de-duo-xian-cheng.md)
   * [3.3-理解进程](di-san-zhang-python-bing-fa-bian-cheng/33li-jie-jin-cheng.md)
