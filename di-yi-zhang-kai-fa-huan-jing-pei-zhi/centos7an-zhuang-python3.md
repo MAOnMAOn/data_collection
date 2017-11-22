@@ -73,7 +73,28 @@ Anaconda 同样支持 Linux，其官方下载链接为：https://www.continuum.i
 
 `sudo chown -R  username /usr/local/conda3/`
 
-### 4. 相关链接
+### 4. 配置 pip 源
+使用默认的 pip 源可能会导致模块安装失败或者关心困难，可以通过配置 pip 源来使用：
+
+首先在当前用户目录下建立文件夹：
+
+`mkdir .pip`
+
+然后新建 pip.conf 文件：
+
+`vim .pip/pip.conf`
+
+并写入：
+
+```
+[global]
+index-url = http://mirrors.aliyun.com/pypi/simple/
+
+[install]
+trusted-host=mirrors.aliyun.com
+```
+
+### 5. 相关链接
 
 官方网站：http://python.org
 下载地址：https://www.python.org/downloads
