@@ -37,12 +37,26 @@ Aiohttp 就是这样一个提供异步 Web 服务的库，从 Python3.5 版本�
 鉴于本人没有在centos7.3之中进行 Chrome 浏览器的下载安装的经验，所以本节主要基于ubuntu16.04的环境进行说明
 
 ####（1）安装浏览器
-Selenium 库作为一个自动化测试工具，需要浏览器来配合它使用，所以在运行selenium之前我们需要确保安装了相应的浏览器。安装命令如下:
+Selenium 库作为一个自动化测试工具，需要浏览器来配合它使用，所以在运行selenium之前我们需要确保安装了相应的浏览器。
+
+首先，配置 yum 源：
+
+`sudo vim /etc/yum.repos.d/google-chrome.repo`
+
+写入：
 
 ```
- sudo apt-get update
- sudo apt install google-chrome-stable
+[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 ```
+
+安装浏览器，并加入 --nogpgcheck 参数,避免安装失败或无法更新：
+
+`sudo yum -y install google-chrome-stable --nogpgcheck`
 
 #### （2）查看浏览器版本
  点击 Chrome 的菜单，帮助->关于 Chrome，即可查看 Chrome 的版本号.
@@ -86,6 +100,7 @@ Selenium 库作为一个自动化测试工具，需要浏览器来配合它使�
 若弹出之后闪退，则可能是 ChromeDriver 版本和 Chrome 版本不简容，请更换 ChromeDriver 版本。
 
 #### （6）启动 chromedriver 无界面模式
+对于版本高于 60 的 chrome　浏览器，我们可以启用浏览器的无界面模式。
 
 ##### 第一种方式
 在linux环境下 pip 安装 PyVirtualDisplay,让后 执行如下python代码：
@@ -111,7 +126,14 @@ Out[84]: <Display cmd_param=['Xvfb', '-br', '-nolisten', 'tcp', '-screen', '0', 
 如此，便不会Chrome浏览器便会不会弹出。
 
 ##### 第二种方式
-启用Chrome的headless模式。
+启用Chrome的headless模式：
+
+```
+>>> from selenium import webdriver
+>>> options = webdriver.ChromeOptions()
+>>> options.add_argument('--headless')
+>>> browser = webdriver.Chrome(chrome_options=options)
+```
 
 ### 3、PhantomJS的安装
 #### （1）下载安装
