@@ -81,7 +81,7 @@ ITEM_PIPELINES = {
 
 我们需要启用 scrapy-redis 的 Scheduler 以及 Dupefilter,并添加数据库访问地址，当然我们也可以启用组件提供的 Item Pipeline。
 
-我们可以看到，作为 scrapy-redis 的默认策略，scrapy-redis 调度的任务是 Request 对象，里面信息量比较大(url,callback 函数、headers 等信息)，这样会造成爬虫速度的降低、还会占用较多的 redis　存储空间。
+我们可以看到，作为 scrapy-redis 的默认策略，scrapy-redis 调度的任务是 Request 对象，里面信息量比较大(url,callback 函数、headers 等信息)，这样会造成爬虫速度的降低、还会占用较多的 redis 存储空间。
 
 #### \(2\) 策略二
 把 url 的生成与抓取任务分开，减少 Master 和 Slaver 主机之间的交流，通过生产者消费者模式，Master 端可以方便地重写去重策略(当数据量大时，进行去重优化，提升爬取速度还是十分重要的)
