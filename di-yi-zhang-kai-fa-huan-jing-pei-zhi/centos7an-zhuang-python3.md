@@ -49,6 +49,12 @@ python3 setup.py install
 
 `sudo ln -s /usr/local/python3/bin/pip /usr/bin/pip3`
 
+最后，为了防止 centos7 之中 python 版本发生冲突，我们还需要进行 yum 文件配置：
+
+`sudo vi /usr/bin/yum`
+
+把首行的 *#!/usr/bin/python* 改为 *#!/usr/bin/python2.7* 即可。
+
 ### 3. Anaconda安装
 Anaconda 同样支持 Linux，其官方下载链接为：https://www.continuum.io/downloads， 选择 Python3 版本的安装包下载即可。
 
