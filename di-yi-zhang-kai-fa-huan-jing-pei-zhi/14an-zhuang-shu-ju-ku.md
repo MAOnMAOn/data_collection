@@ -5,7 +5,7 @@
 关系型数据库如 SQLite、MySQL、Oracle、SQL Server、DB2 等，其数据库是以表的形式存储，非关系型数据库如MongoDB、Redis，其存储形式是键值对，存储形式更加灵活。这里用到的数据库主要有关系型数据库 MySQL 及非关系型数据库 MongoDB、Redis。
 
 ### 1、MySQL的安装
-#### （1）安装mysql
+#### (1) 安装mysql
 以 MySQL 5.7 的 Yum 源为例，如果需要其他版本可以另寻，安装命令如下：
 
 ```
@@ -15,7 +15,7 @@ sudo  yum localinstall http://dev.mysql.com/get/mysql57-community-release-el7-7.
 sudo  yum install mysql-community-server -y
 ```
 
-#### （2）启动mysql
+#### (2) 启动mysql
 接下来需要启动 MySQL 服务，启动 MySQL 服务命令：
 
 ```
@@ -30,7 +30,7 @@ sudo systemctl stop mysqld.service
 sudo systemctl restart mysqld.service
 ```
 
-#### （3）修改mysql管理员密码
+#### (3) 修改mysql管理员密码
 以上我们就完成了 Linux 下 MySQL 的安装，现在我们查找初始密码：
 
 `grep 'temporary password' /var/log/mysqld.log`
@@ -49,8 +49,8 @@ mysql> FLUSH PRIVILEGES;
 
 命令中 newpass 即为修改的新的 MySQL 密码，请自行替换,当然我们也可以修改mysql的默认密码安全策略，此处不再赘述。
 
-#### （4）mysql远程访问配置
-由于 Linux 一般会作为服务器使用，为了使得 MySQL 可以被远程访问，我们需要修改 MySQL 的配置文件，配置文件路径一般为 /etc/mysql/my.cnf。
+#### (4) mysql远程访问配置
+由于 Linux 一般会作为服务器使用，为了使得 MySQL 可以被远程访问，我们需要修改 MySQL 的配置文件，配置文件路径一般为 /etc/my.cnf。
 如使用 vi 进行修改的命令如下：
 
 `vi /etc/mysql/my.cnf`
@@ -67,10 +67,8 @@ mysql> FLUSH PRIVILEGES;
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'djangotest'@'%' IDENTIFIED BY 'admin123!' WITH GRANT OPTION;
 ```
 
-修改完成之后重启 MySQL 服务，这样 MySQL 就可以被远程访问了。
-
-#### （5）修改mysql默认字符编码
-最后我们还需要配置默认编码为utf8，修改/etc/my.cnf配置文件，在[mysqld]下添加编码配置，如下所示：
+#### (5) 修改mysql默认字符编码
+完成远程访问设置以后，还需要配置默认编码为utf8，修改/etc/my.cnf配置文件，在[mysqld]下添加编码配置，如下所示：
 
 ```
 [mysqld]
@@ -79,6 +77,32 @@ init_connect='SET NAMES utf8'
 ```
 
 重新启动mysql服务即可。
+
+#### (6) 其他设置
+如果 mysql 是安装在服务器上，还需要修改/etc/my.cnf配置文件，并在[mysqld]下添加设置：
+
+** 配置存储路径 **
+修改 datadir，把 datadir=/var/lib/mysql 改为自定义存储路径，如：
+
+`datadir=/data/mysqldb/mysql/`
+
+**设置独立表空间**
+
+`innodb_file_per_table=1`
+
+**设置查询缓存**
+
+```
+# query_cache
+query_cache_size=0
+query_cache_type=0
+```
+
+**配置 sql_mode**
+
+`sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES `
+
+最后，重新启动mysql服务即可。
 
 到此为止，Linux 下安装 MySQL 的过程结束。
 
