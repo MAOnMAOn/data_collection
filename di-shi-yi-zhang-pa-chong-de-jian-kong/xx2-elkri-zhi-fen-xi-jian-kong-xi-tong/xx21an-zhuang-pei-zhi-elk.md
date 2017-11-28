@@ -23,7 +23,7 @@ Elasticsearch 官方建议使用 Oracle 的 JDK8，在安装之前首先要确�
 
 由于我的系统是最小化安装的，终端显示了报错信息。
 
-解压 jdk-8u131-linux-x64.tar.gz 文件，并重命名为 jdk/。
+解压已经下载好的 jdk-8u131-linux-x64.tar.gz 文件，并重命名为 jdk/。
 
 使用如下命令,把　jdk/ 文件放入 /usr/local 目录下:
 
