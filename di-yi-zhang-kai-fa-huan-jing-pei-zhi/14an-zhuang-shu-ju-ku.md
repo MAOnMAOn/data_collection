@@ -47,13 +47,27 @@ mysql> UPDATE user SET Password = PASSWORD('newpass') WHERE user = 'root';
 mysql> FLUSH PRIVILEGES;
 ```
 
-命令中 newpass 即为修改的新的 MySQL 密码，请自行替换,当然我们也可以修改mysql的默认密码安全策略，此处不再赘述。
+如果出现 ** You must reset your password using ALTER USER statement before executing this statement. ** 的错误提示，可以首先设置如下：
+
+`set password = password("MkcCuY2fA=q/");`
+
+如果出现 ** Your password does not satisfy the current policy requirements **的错误提示，则表示需要进行密码策略设置，在内部的测试服务器上可以简单测试。
+
+>首先，把判断密码的标准修改为基于密码的长度：
+
+>`set global validate_password_policy=0;`
+
+>然后，把默认最小密码长度设置为4:
+
+>`set global validate_password_length=1;`
+
+详情见 [mysql 官方说明](http://dev.mysql.com/doc/refman/5.7/en/validate-password-options-variables.html#sysvar_validate_password_policy)
 
 #### (4) mysql远程访问配置
 由于 Linux 一般会作为服务器使用，为了使得 MySQL 可以被远程访问，我们需要修改 MySQL 的配置文件，配置文件路径一般为 /etc/my.cnf。
 如使用 vi 进行修改的命令如下：
 
-`vi /etc/mysql/my.cnf`
+`vi /etc/my.cnf`
 
 取消此行的注释：
 
