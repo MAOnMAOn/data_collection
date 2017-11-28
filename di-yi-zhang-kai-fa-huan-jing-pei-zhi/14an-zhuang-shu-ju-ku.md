@@ -90,15 +90,25 @@ character_set_server=utf8
 init_connect='SET NAMES utf8'
 ```
 
-重新启动mysql服务即可。
-
-#### (6) 其他设置
-如果 mysql 是安装在服务器上，还需要修改/etc/my.cnf配置文件，并在[mysqld]下添加设置：
-
-** 配置存储路径 **
-修改 datadir，把 datadir=/var/lib/mysql 改为自定义存储路径，如：
+#### (6) 修改 mysql 默认存储路径
+首先停止mysql服务，编辑/etc/my.cnf配置文件，并在[mysqld]下添加设置,修改 datadir，把 datadir=/var/lib/mysql 改为自定义存储路径，如：
 
 `datadir=/data/mysqldb/mysql/`
+
+拷贝文件到 datadir, 通过 cp -a 保持原有权限：
+
+`sudo cp -a /var/lib/mysql /data/mysqldb`
+
+关闭系统校验(当然也可以关闭 SeLinux):
+
+`sudo setenforce 0`
+
+最后，启动mysql服务，并进入数据库验证：
+
+![](/assets/mysql验证.png)
+
+#### (7) 其他设置
+如果 mysql 是安装在服务器上，还需要修改/etc/my.cnf配置文件，并在[mysqld]下添加设置：
 
 **设置独立表空间**
 
@@ -116,9 +126,23 @@ query_cache_type=0
 
 `sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES`
 
-最后，重新启动mysql服务即可。
+** 重置root密码 **
 
-到此为止，Linux 下安装 MySQL 的过程结束。
+1. 停止数据库服务
+
+2. 修改 /etc/my.cnf 在 [mysqld] 下加入 `skip-grant-tables`
+
+3. 启动数据库
+
+4. 修改 root 密码
+```
+UPDATE mysql.user SET authentication_string=PASSWORD("yourpasswd") WHERE user='root' and Host = 'localhost';
+flush privileges;
+```
+
+5. 修改 /etc/my.cnf 并注释掉 skip-grant-tables
+
+最后，重新启动mysql服务即可。
 
 ### 2、MongoDB安装
 MongoDB 是由 C++ 语言编写的非关系型数据库，是一个基于分布式文件存储的开源数据库系统，其内容存储形式类似 Json 对象，它的字段值可以包含其他文档，数组及文档数组，非常灵活。
