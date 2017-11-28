@@ -100,7 +100,7 @@ query_cache_type=0
 
 **配置 sql_mode**
 
-`sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES `
+`sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES`
 
 最后，重新启动mysql服务即可。
 
