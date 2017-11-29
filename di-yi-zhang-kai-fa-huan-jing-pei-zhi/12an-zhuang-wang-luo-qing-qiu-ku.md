@@ -64,9 +64,9 @@ gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 我们需要记住 Chrome 版本号，在后面选择 ChromeDriver 版本时需要用到。
 
 #### （3）下载浏览器驱动
-打开 ChromeDriver 的官方网站，链接为：https://sites.google.com/a/chromium.org/chromedriver/downloads。 可以看到到目前为止最新版本为 2.32，但其支持的 Chrome 浏览器版本为 59-61，所以我们可以选择 2.30 或者2.31 版本。
+打开 ChromeDriver 的官方网站，链接为：https://sites.google.com/a/chromium.org/chromedriver/downloads 。 可以看到到目前为止最新版本为 2.32，但其支持的 Chrome 浏览器版本为 59-61，所以我们可以选择 2.30 或者2.31 版本。
 
-找好对应的版本号后随后到 ChromeDriver 镜像站下载对应的安装包即可：https://chromedriver.storage.googleapis.com/index.html， 不同平台可以下载不同的安装包。
+找好对应的版本号后随后到 ChromeDriver 镜像站下载对应的安装包即可：https://chromedriver.storage.googleapis.com/index.html ，不同平台可以下载不同的安装包。
 
 #### （4）环境变量配置
 在 Linux、Mac 下，需要将可执行文件配置到环境变量或将文件移动到属于环境变量的目录里。
