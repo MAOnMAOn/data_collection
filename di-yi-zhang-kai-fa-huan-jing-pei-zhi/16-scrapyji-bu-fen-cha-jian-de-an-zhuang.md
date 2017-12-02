@@ -6,7 +6,7 @@ Scrapy 是一个十分强大的爬虫框架，依赖的库比较多，至少需�
 
 #### （1）Anaconda安装
 
-这种方法是一种比较简单的安装 Scrapy 的方法（尤其是对 Windows 来说），如果你的 Python 是使用 Anaconda 安装的，或者还没有安装 Python 的话，可以使用该方法安装，简单省力，但通过 Anaconda 安装 Scrapy 可能会给后续 Scrapyd 模块的使用带来困扰，所以推荐使用下文中的直接安装方法。
+这种方法是一种比较简单的安装 Scrapy 的方法（尤其是对 Windows 来说），如果你的 Python 是使用 Anaconda 安装的，或者还没有安装 Python 的话，可以使用该方法安装，简单省力，但通过 Anaconda 安装 Scrapy 可能会给后续 Scrapyd 模块的使用带来困扰，所以推荐使用 pip 安装。
 
 如果已经安装好了 Anaconda，那么可以通过 conda 命令安装 Scrapy，安装命令如下：
 
