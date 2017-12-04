@@ -291,3 +291,30 @@ foobared 即当前密码，可以自行修改。
 
 #### （2）RedisDump的安装
 RedisDump 是一个用于 Redis 数据导入导出的工具，是基于 Ruby 实现的，所以要安装 RedisDump 需要先安装Ruby。
+
+### 3. 安装Berkeley DB
+Berkeley DB是一个嵌入式数据库，为应用程序提供可伸缩的、高性能的、有事务保护功能的数据管理服务。
+
+其主要特点有：
+* 嵌入式
+>直接链接到应用程序中，与应用程序运行于同样的地址空间中，因此，无论是在网络上不同计算机之间还是在同一台计算机的不同进程之间，数据库操作并不要求进程间通讯。 Berkeley DB为多种编程语言提供了API接口，其中包括C、C++、Java、Perl、Tcl、Python和PHP，所有的数据库操作都在程序库内部发生。多个进程，或者同一进程的多个线程可同时使用数据库，有如各自单独使用，底层的服务如加锁、事务日志、共享缓冲区管理、内存管理等等都由程序库透明地执行。
+
+* 轻便灵活
+>可以运行于几乎所有的UNIX和Linux系统及其变种系统、Windows操作系统以及多种嵌入式实时操作系统之下，已经被好多高端的因特网服务器、台式机、掌上电脑、机顶盒、网络交换机以及其他一些应用领域所采用。一旦Berkeley DB被链接到应用程序中，终端用户一般根本感觉不到有一个数据库系统存在。
+
+* 可伸缩
+>Database library本身是很精简的（少于300KB的文本空间），但它能够管理规模高达256TB的数据库。它支持高并发度，成千上万个用户可同时操纵同一个数据库
+
+#### 编译安装
+
+```
+$ sudo su    #　切换用户
+# wget http://download.oracle.com/berkeley-db/db-6.2.32.NC.tar.gz
+# tar zxvf db-6.2.32.NC.tar.gz
+# mv db-6.2.32.NC /usr/local/berkeleydb
+# cd build_unix
+# ../dist/configure
+# make && make install
+# echo '/usr/local/berkeleydb/lib/' >> /etc/ld.so.conf
+# ldconfig  　# 这2句的作用就是通知系统Berkeley DB的动态链接库在/usr/local/berkeleydb/lib/目录。
+```
