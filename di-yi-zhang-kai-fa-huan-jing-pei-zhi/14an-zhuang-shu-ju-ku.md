@@ -292,7 +292,7 @@ foobared 即当前密码，可以自行修改。
 #### （2）RedisDump的安装
 RedisDump 是一个用于 Redis 数据导入导出的工具，是基于 Ruby 实现的，所以要安装 RedisDump 需要先安装Ruby。
 
-### 3. 安装Berkeley DB
+### 4. 安装Berkeley DB
 Berkeley DB是一个嵌入式数据库，为应用程序提供可伸缩的、高性能的、有事务保护功能的数据管理服务。
 
 其主要特点有：
