@@ -89,7 +89,7 @@ es 与关系型数据库都可以进行数据的存储与检索外，还有一�
 
 首先，安装中文分词插件，这里使用 ik：
 
-`$ ./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v5.5.1/elasticsearch-analysis-ik-5.5.1.zip`
+` ./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v5.5.1/elasticsearch-analysis-ik-5.5.1.zip`
 
 上面代码安装的是5.5.1版的插件，与 Elastic 5.5.1 配合使用。  
 接着，重新启动 Elastic，就会自动加载这个新安装的插件。然后，新建一个 Index，指定需要分词的字段。这一步根据数据结构而异，下面的命令只针对本文。基本上，凡是需要搜索的中文字段，都要单独设置一下。
