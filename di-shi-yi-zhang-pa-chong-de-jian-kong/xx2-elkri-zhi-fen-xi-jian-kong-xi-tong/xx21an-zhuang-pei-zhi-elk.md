@@ -128,7 +128,7 @@ http.port:9200
 
 `sudo service sshd restart`
 
-退出当前用户，并查看 `ulimit -n`，发现已改为 65536.
+退出当前用户，并查看 `ulimit -n`，发现已改为 65536。
 
 第五步　我们需要启动 es 并验证安装，**重启** 机器以后，进入 elasticsearch 的 bin 目录，以非 root 用户
 在后台启动:
