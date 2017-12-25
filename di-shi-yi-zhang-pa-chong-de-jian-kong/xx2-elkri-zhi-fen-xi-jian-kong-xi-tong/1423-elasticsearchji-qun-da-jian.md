@@ -75,6 +75,61 @@ bootstrap.system_call_filter: false
 
 最后，还可以通过 ulimit 取消文件数与线程数限制。
 
+### 2. 容器化配置
+容器化部署，主要通过 docker 来实现，为简单起见，以 docker 方式进行部署。
+
+* es1.yml
+
+```
+cluster.name: my-application
+node.name: node-1
+# 可以选择宿主机地址，网络模式选择 --net=host
+network.host: 172.17.0.2
+bootstrap.memory_lock: true
+discovery.zen.ping.unicast.hosts: ["172.17.0.3"]
+discovery.zen.minimum_master_nodes: 2
+```
+
+* es2.yml
+
+```
+cluster.name: my-application
+node.name: node-2
+network.host: 172.17.0.3
+bootstrap.memory_lock: true
+discovery.zen.ping.unicast.hosts: ["172.17.0.2"]
+discovery.zen.minimum_master_nodes: 2
+```
+
+现在，启动 elasticsearch 容器：
+
+```
+# 启动 es1
+docker run -d \
+--name=es1 \
+-p 9200:9200 \
+-e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
+--ulimit memlock=-1:-1 \
+--ulimit nofile=65536:65536 \
+-v ${YOUR_PATH}/es1.yml:/usr/share/elasticsearch/config/elasticsearch.yml \
+-v ${YOUR_PATH}/data:/usr/share/elasticsearch/data \
+-v ${YOUR_PATH}/logs:/usr/share/elasticsearch/logs \
+elasticsearch:5.5.0
+```
+
+```
+# 启动 es2
+docker run -d \
+--name=es2 \
+-e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
+--ulimit memlock=-1:-1 \
+--ulimit nofile=65536:65536 \
+-v ${YOUR_PATH}/es2.yml:/usr/share/elasticsearch/config/elasticsearch.yml \
+-v ${YOUR_PATH}/data:/usr/share/elasticsearch/data \
+-v ${YOUR_PATH}/logs:/usr/share/elasticsearch/logs \
+elasticsearch:5.5.0
+```
+
 
 
 
