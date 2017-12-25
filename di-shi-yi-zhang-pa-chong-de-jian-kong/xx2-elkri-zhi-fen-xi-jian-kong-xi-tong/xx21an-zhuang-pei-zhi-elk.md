@@ -120,6 +120,16 @@ http.port:9200
 > 修改
 >user soft nproc 65536
 
+接着 **重启** 机器，并输入 `ulimit -n` 进行验证，如果显示并非预期的 65536，比如 1024 则可能需要修改 ssh 配置：
+
+`sudo vim /etc/ssh/sshd_config`
+
+把其中的 UseLogin 的值改为 yes,　然后重启服务：
+
+`sudo service sshd restart`
+
+退出当前用户，并查看 `ulimit -n`，发现已改为 65536.
+
 第五步　我们需要启动 es 并验证安装，**重启** 机器以后，进入 elasticsearch 的 bin 目录，以非 root 用户
 在后台启动:
 
