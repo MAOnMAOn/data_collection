@@ -101,6 +101,7 @@
   * [14.2-ELK日志分析监控系统](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong.md)
     * [14.2.1-安装配置ELK](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/xx21an-zhuang-pei-zhi-elk.md)
     * [14.2.2-安装ElasticSearch插件](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/xx22an-zhuang-elasticsearch-chuang-jian.md)
+    * [14.2.3-ElasticSearch集群搭建](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/1423-elasticsearchji-qun-da-jian.md)
     * [附录:ElasticSearch概念浅析](di-shi-yi-zhang-pa-chong-de-jian-kong/xx2-elkri-zhi-fen-xi-jian-kong-xi-tong/fu-5f553a-elasticsearch-gai-nian-qian-xi.md)
 * [第十五章 分布式爬虫](di-xx-zhang-fen-bu-shi-pa-chong.md)
   * [scrapy分布式原理](di-xx-zhang-fen-bu-shi-pa-chong/scrapyfen-bu-shi-yuan-li.md)
