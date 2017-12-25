@@ -130,12 +130,10 @@ docker run -d \
 elasticsearch:5.5.0
 ```
 
+#### 查看集群情况(GET:/_cat/health?v)
+`curl http://127.0.0.1:9200/_cat/health?v`
 
+#### 查看内存锁定情况(GET:/_nodes?filter_path=**.molockall)
+`curl http://127.0.0.1:9200/_nodes?filter_path=**.molockall`
 
-
-
-
-
-
-
-
+注意：为了防止容器因为内存问题奔溃，一定要设置 `bootstrap.memory_lock: true`，并且查看是否生效。
