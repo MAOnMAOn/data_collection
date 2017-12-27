@@ -170,7 +170,6 @@ print(browser.current_url)
 
 ### 4、补充
 这里我们简要列出部分文档链接作为本节补充。
-
 #### （1）selenium
 官方网站：http://www.seleniumhq.org
 GitHub：https://github.com/SeleniumHQ/selenium/tree/master/py

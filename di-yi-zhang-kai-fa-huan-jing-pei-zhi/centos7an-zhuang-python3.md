@@ -101,10 +101,10 @@ trusted-host=mirrors.aliyun.com
 ```
 
 ### 5. 相关链接
-官方网站：http://python.org
-下载地址：https://www.python.org/downloads
-第三方库：https://pypi.python.org/pypi
-官方文档：https://docs.python.org/3
-中文教程：http://www.runoob.com/python3/python3-tutorial.html
-Awesome Python：https://github.com/vinta/awesome-python
-Awesome Python 中文版：https://github.com/jobbole/awesome-python-cn
+官方网站：http://python.org<br>
+下载地址：https://www.python.org/downloads<br>
+第三方库：https://pypi.python.org/pypi<br>
+官方文档：https://docs.python.org/3<br>
+中文教程：http://www.runoob.com/python3/python3-tutorial.html<br>
+Awesome Python：https://github.com/vinta/awesome-python<br>
+Awesome Python 中文版：https://github.com/jobbole/awesome-python-cn<br>
