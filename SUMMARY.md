@@ -37,7 +37,7 @@
   * [3.4-并行编程概念浅析](di-san-zhang-python-bing-fa-bian-cheng/34bing-fa-bian-cheng-gai-nian-qian-xi.md)
   * [3.5-并发编程之multiprocessing](di-san-zhang-python-bing-fa-bian-cheng/34bing-fa-bian-cheng-zhi-multiprocessing.md)
   * [3.6-concurrent.futures进程池](di-san-zhang-python-bing-fa-bian-cheng/36-concurrentfuturesjin-cheng-chi.md)
-  * [3.7-Python异步编程初步](di-san-zhang-python-bing-fa-bian-cheng/36-pythonyi-bu-bian-cheng-chu-bu.md)
+  * [3.7-异步编程入门](di-san-zhang-python-bing-fa-bian-cheng/36-pythonyi-bu-bian-cheng-chu-bu.md)
   * [3.9-生产者/消费者模式](di-si-zhang-shu-ju-cai-ji-ce-lve/45sheng-chan-8005-xiao-fei-zhe-mo-shi.md)
 * [第四章 数据采集策略](di-si-zhang-shu-ju-cai-ji-ce-lve.md)
   * [4.1-目标站点初步分析](di-si-zhang-shu-ju-cai-ji-ce-lve/41cai-ji-fang-an-she-ji.md)
