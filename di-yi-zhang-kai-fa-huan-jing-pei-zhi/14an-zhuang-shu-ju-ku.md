@@ -292,6 +292,43 @@ foobared 即当前密码，可以自行修改。
 #### （2）RedisDump的安装
 RedisDump 是一个用于 Redis 数据导入导出的工具，是基于 Ruby 实现的，所以要安装 RedisDump 需要先安装Ruby。
 
+##### a. 安装 Ruby 依赖
+
+```
+sudo yum install -y ruby ruby-devel rubygems
+# 添加淘宝源
+gem source --add https://gems.ruby-china.org/ 
+查看并删除国外相关源
+gem source -l && gem source --remove https://rubygems.org/ 
+```
+
+##### b. 安装redis-dump
+Centos7.3 默认支持ruby到2.0.0，可gem 安装redis需要最低是2.2.2
+解决办法是先安装rvm，再把ruby版本提升至2.3.3。
+
+```
+# 添加公钥
+gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+# 安装RVM
+sudo curl -L get.rvm.io | bash -s stable
+source /home/user/.rvm/scripts/rvm  # root 用户下为source /usr/local/rvm/scripts/rvm
+# 安装一个 ruby 版本
+rvm install 2.3.4
+# 验证安装
+ruby --version
+# 最后安装redis-dump
+gem install redis-dump
+```
+
+##### c. 导入导出数据
+
+```
+# 导出数据
+redis-dump -u :password@192.168.1.159:6379 > test.json
+导入数据
+cat test.json | redis-load -u :password@192.168.1.159:6379
+```
+
 ### 4. 安装Berkeley DB
 Berkeley DB是一个嵌入式数据库，为应用程序提供可伸缩的、高性能的、有事务保护功能的数据管理服务。
 
