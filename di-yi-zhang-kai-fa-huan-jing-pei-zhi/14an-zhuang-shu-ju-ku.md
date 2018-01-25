@@ -107,6 +107,17 @@ init_connect='SET NAMES utf8'
 
 ![](/assets/mysql验证.png)
 
+如果在错误日志之中出现如下警示：
+
+`[Warning] Can't create test file /data/mysqldb/mysql/docker-52.lower-test`
+
+则需要为 mysql 用户配置相应的文件目录权限，比如：
+
+`cd /data/mysqldb/mysql && sudo chown -R mysql:mysql *`
+
+这里，我们简单改变了整个目录的权限(这是一个不好的习惯)，一般可以修改指定文件目录的权限比如 **ibdata1 ** 。
+
+
 #### (7) 其他设置
 如果 mysql 是安装在服务器上，还需要修改/etc/my.cnf配置文件，并在[mysqld]下添加设置：
 
