@@ -102,10 +102,16 @@ Bigdesk为Elastic集群提供动态的图表与统计数据。主要用于监控
 
 有时候, 我们会把一些站点部署在虚拟机之中，但是即便实体机与虚拟机可以互相 ping 通, 但就是不能在实体机里面访问虚拟机网络，那么此时就需要设置虚拟机防火墙。运行如下命令即可：
 
-`sudo firewall-cmd --permanent --add-port=9100/tcp`
+`sudo firewall-cmd --permanent --zone=public --add-port=9100/tcp`
 
-`sudo firewall-cmd --permanent --add-port=9200/tcp`
+`sudo firewall-cmd --permanent --zone=public --add-port=9200/tcp`
 
-`sudo firewall-cmd --permanent --add-port=5601/tcp`
+`sudo firewall-cmd --permanent --zone=public --add-port=5601/tcp`
+
+`sudo firewall-cmd --reload`
+
+如果要关闭相关端口，可执行：
+
+`sudo firewall-cmd --permanent --zone=public --remove-port=80/tcp`
 
 `sudo firewall-cmd --reload`
