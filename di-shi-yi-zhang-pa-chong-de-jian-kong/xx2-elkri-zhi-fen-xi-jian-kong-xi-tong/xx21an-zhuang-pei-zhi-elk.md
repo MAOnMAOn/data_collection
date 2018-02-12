@@ -44,7 +44,7 @@ export CLASSPATH=.:$JRE_HOME/lib
 export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 ```
 
-保存后运行 `source /etc/profile` 使环境变量生效。
+保存后运行 `source /etc/profile.d/jdk.sh` 使环境变量生效。
 
 退出当前终端，并重新登录，输入 `java -version` 确认安装:
 
