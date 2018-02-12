@@ -59,8 +59,8 @@ python3 setup.py install
 Anaconda 同样支持 Linux，其官方下载链接为：https://www.continuum.io/downloads， 选择 Python3 版本的安装包下载即可。
 
 如果下载速度过慢可以选择使用清华大学镜像，
-下载列表链接为：https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/，
-使用说明链接为：https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/，
+下载列表链接为：https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ ，
+使用说明链接为：https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/ ，
 我们可以选择需要的版本进行下载，速度相比官网会快很多。
 
 首先，下载镜像文件：
