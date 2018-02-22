@@ -141,7 +141,7 @@ Out[84]: <Display cmd_param=['Xvfb', '-br', '-nolisten', 'tcp', '-screen', '0', 
 
 Selenium 支持 PhantomJS，而且在简单任务下，其运行效率也是较高的，还支持各种参数配置，使用非常方便，下面我们就来了解一下 PhantomJS 的安装过程。
 
-我们需要在官方网站下载对应的安装包。http://phantomjs.org/download.html， 它支持多种操作系统，Windows、Linux、Mac、FreeBSD等，我们可以选择对应的平台将安装包下载下来。
+我们需要在官方网站下载对应的安装包。http://phantomjs.org/download.html ， 它支持多种操作系统，Windows、Linux、Mac、FreeBSD等，我们可以选择对应的平台将安装包下载下来。
 
 Linux 下环境变量配置可以参见 ChromeDriver 安装一节，在此不再赘述，关键在于将 PhantomJS 的可执行文件所在路径配置到环境变量里。
 
