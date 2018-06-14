@@ -117,6 +117,23 @@ init_connect='SET NAMES utf8'
 
 这里，我们简单改变了整个目录的权限(这是一个不好的习惯)，一般可以修改指定文件目录的权限比如 **ibdata1 ** 。
 
+#### (8) 开启慢查询日志
+修改配置文件/etc/my.cnf，在[mysqld]下的下方加入
+
+````
+# 5.5以上版本设置慢查询日志
+slow-query-log=ON
+slow_query_log_file=/data/mysqldb/show-query.log
+long_query_time=2
+```
+
+然后，在shell环境下执行：
+
+```
+sudo chown mysql /data/mysqldb/show-query.log 
+sudo systemctl daemon-reload
+sudo systemctl restart mysqld.service
+```
 
 #### (7) 其他设置
 如果 mysql 是安装在服务器上，还需要修改/etc/my.cnf配置文件，并在[mysqld]下添加设置：
