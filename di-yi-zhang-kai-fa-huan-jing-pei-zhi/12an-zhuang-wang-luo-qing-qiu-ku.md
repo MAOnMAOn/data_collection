@@ -133,9 +133,14 @@ Out[84]: <Display cmd_param=['Xvfb', '-br', '-nolisten', 'tcp', '-screen', '0', 
 >>> options = webdriver.ChromeOptions()
 >>> options.add_argument('--headless')
 >>> browser = webdriver.Chrome(chrome_options=options)
+
+## 部分新版本的chrome 可能会报错
+## 可以添加如下内容
+>>> options.add_argument('--no-sandbox')
+>>> options.add_argument('--disable-dev-shm-usage')
 ```
 
-### 3、PhantomJS的安装
+### 3、PhantomJS的安装(已放弃维护, 新版本selenium不再支持)
 #### （1）下载安装
 如果我们使用 Chrome 或 Firefox 进行网页抓取的话，每次抓取的时候，都会弹出一个浏览器，比较影响使用。所以在这里再引入无界面浏览器，即 PhantomJS。
 
