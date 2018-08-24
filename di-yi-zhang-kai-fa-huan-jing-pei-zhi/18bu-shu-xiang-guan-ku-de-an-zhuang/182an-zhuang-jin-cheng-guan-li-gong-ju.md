@@ -19,17 +19,17 @@ supervisor 是用 Python 开发的一套通用的进程管理程序，可以将�
 ```
 sudo su  # 切换到 root 用户下
 yum install -y python-setuptools.noarch
-easy_install supervisor
+easy_install-2.7 supervisor
 ```
 
-### 2. 配置
+### 2. 基础配置
 
 \(1\) 生成默认配置文件  
 在 root 用户下，生成默认配置文件
 
 `# echo_supervisord_conf > /etc/supervisord.conf`
 
-我们可以根据需要修改里面的配置。我这里，每个不同的项目，使用了一个单独的配置的文件，放置在 /etc/supervisor/ 下面，于是修改 /etc/supervisord.conf ，内容如下：
+我们可以根据需要修改里面的配置。我这里，每个不同的项目，使用了一个单独的配置的文件，我们选择放置在 /etc/supervisor/ 下面，于是修改 /etc/supervisor/supervisord.conf ，内容如下：
 
 ```
 [unix_http_server]
@@ -124,7 +124,19 @@ WantedBy=multi-user.target
 
 `systemctl reload supervisord.service`
 
-### 3. 运行检查
+### 3. 运行supervisor
+
+启动supervisor输入如下命令，使用具体的配置文件执行：
+
+`supervisord -c supervisord.conf`
+
+关闭supervisord需要通过supervisor的控制器：
+
+`supervisorctl -c supervisord.conf shutdown`
+
+重启supervisord也是通过supervisor的控制器：
+
+`supervisorctl -c supervisord.conf reload`
 
 supervisor运行后本身是守护进程，通过自身来管理相应的子进程，通过观察相应的进程状态就很明了：
 
@@ -133,5 +145,49 @@ ps -ef | grep supervisord
 root     16157     1  0 20:25 ?        00:00:00 /usr/bin/python /usr/bin/supervisord -c /etc/supervisord.conf
 ```
 
+### 4. 简单示例
 
+使用echo_supervisord_conf命令得到supervisor配置模板,
+
+`echo_supervisord_conf > celery_supervisord.conf`
+
+新行输入如下配置信息（以celery worker为例，具体含义看注释）：
+
+```
+[program:celery.worker] 
+;指定运行目录 
+directory=/home/xxx/webapps/yshblog_app/yshblog
+;运行目录下执行命令
+command=celery -A yshblog worker --loglevel info --logfile celery_worker.log
+ 
+;启动设置 
+numprocs=1          ;进程数
+autostart=true      ;当supervisor启动时,程序将会自动启动 
+autorestart=true    ;自动重启
+ 
+;停止信号,默认TERM 
+;中断:INT (类似于Ctrl+C)(kill -INT pid)，退出后会将写文件或日志(推荐) 
+;终止:TERM (kill -TERM pid) 
+;挂起:HUP (kill -HUP pid),注意与Ctrl+Z/kill -stop pid不同 
+;从容停止:QUIT (kill -QUIT pid) 
+stopsignal=INT
+```
+其中第一行是必须的，设置该程序的名称（可自行修改，不要和其他program重复）。
+
+这里没提到的参数配置不是必须的，可以参考Supervisor的官网。
+
+还需说明日志的问题。原本我设置了日志配置，而不是通过celery命令设置--logfile参数：
+
+```
+;输出日志 
+stdout_logfile=celery_worker.log 
+stdout_logfile_maxbytes=10MB  ;默认最大50M 
+stdout_logfile_backups=10     ;日志文件备份数，默认为10 
+ 
+;错误日志 
+redirect_stderr=false         ;为true表示禁止监听错误 
+stderr_logfile=celery_worker_err.log 
+stderr_logfile_maxbytes=10MB 
+stderr_logfile_backups=10
+```
 
