@@ -69,7 +69,7 @@ supervisor 同时提供了通过浏览器来管理进程的方法，只需要注
 
 ** 使用 include **
 
-在配置文件的最后，有一个 [include] 的配置项，跟 Nginx 一样，可以 include 某个文件夹下的所有配置文件，这样我们就可以为每个进程或相关的几个进程的配置单独写成一个文件。
+在配置文件的最后，有一个 \[include\] 的配置项，跟 Nginx 一样，可以 include 某个文件夹下的所有配置文件，这样我们就可以为每个进程或相关的几个进程的配置单独写成一个文件。
 
 ```
 [include]
@@ -79,7 +79,6 @@ files = /etc/supervisor/*.conf
 ** 设置权限 **
 
 `sudo chown user /home/supervisor`
-
 
 现在，我们可以启动 supervisor 了：
 
@@ -92,7 +91,7 @@ files = /etc/supervisor/*.conf
 \(2\) 设置开机自启动  
 为了能够在机器启动之后自动启动supervisor，需要把supervisor进程配置进systemd。
 
-首先，进入目录 /usr/lib/systemd/system/，增加文件 supervisord.service，来使得机器启动的时候启动supervisor，文件内容：
+首先，进入目录 /usr/lib/systemd/system/，增加文件 supervisord.service，来使得机器启动的时候启动supervisor，注意注释行必须有以 # 或 ; 开头,文件内容：
 
 ```
 # supervisord service for systemd (CentOS 7.0+)
@@ -147,7 +146,7 @@ root     16157     1  0 20:25 ?        00:00:00 /usr/bin/python /usr/bin/supervi
 
 ### 4. 简单示例
 
-使用echo_supervisord_conf命令得到supervisor配置模板,
+使用echo\_supervisord\_conf命令得到supervisor配置模板,
 
 `echo_supervisord_conf > celery_supervisord.conf`
 
@@ -159,12 +158,12 @@ root     16157     1  0 20:25 ?        00:00:00 /usr/bin/python /usr/bin/supervi
 directory=/home/xxx/webapps/yshblog_app/yshblog
 ;运行目录下执行命令
 command=celery -A yshblog worker --loglevel info --logfile celery_worker.log
- 
+
 ;启动设置 
 numprocs=1          ;进程数
 autostart=true      ;当supervisor启动时,程序将会自动启动 
 autorestart=true    ;自动重启
- 
+
 ;停止信号,默认TERM 
 ;中断:INT (类似于Ctrl+C)(kill -INT pid)，退出后会将写文件或日志(推荐) 
 ;终止:TERM (kill -TERM pid) 
@@ -172,6 +171,7 @@ autorestart=true    ;自动重启
 ;从容停止:QUIT (kill -QUIT pid) 
 stopsignal=INT
 ```
+
 其中第一行是必须的，设置该程序的名称（可自行修改，不要和其他program重复）。
 
 这里没提到的参数配置不是必须的，可以参考Supervisor的官网。
@@ -183,11 +183,13 @@ stopsignal=INT
 stdout_logfile=celery_worker.log 
 stdout_logfile_maxbytes=10MB  ;默认最大50M 
 stdout_logfile_backups=10     ;日志文件备份数，默认为10 
- 
+
 ;错误日志 
 redirect_stderr=false         ;为true表示禁止监听错误 
 stderr_logfile=celery_worker_err.log 
 stderr_logfile_maxbytes=10MB 
 stderr_logfile_backups=10
 ```
+
+
 
