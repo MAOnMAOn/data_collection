@@ -205,8 +205,59 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 sudo systemctl stop mongod
 sudo systemctl reload mongod
 ```
+#### （2）mongodb的警告处理
+启动 MongoDB 以后，柯南会有如下告警：
 
-#### （2）mongodb的访问控制
+![](/assets/mongo_warning.png)
+
+第一个： WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+意思是：强烈建议使用带WiredTiger存储引擎的XFS文件系统
+
+第二个： WARNING: Access control is not enabled for the database.
+意思是：未对数据库启用访问控制，对数据和配置的读写访问不受限制（危险的warning）
+
+以上2个告警， 在ext4文件系统中，设置访问控制以后即可消除。
+
+第三个：WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+
+`# cat /sys/kernel/mm/transparent_hugepage/enabled`
+
+[always] madvise never
+
+关闭命令：
+
+`#echo never > /sys/kernel/mm/transparent_hugepage/enabled`
+
+第四个：WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+需要将/sys/kernel/mm/transparent_hugepage/defrag设置为never
+
+`# cat /sys/kernel/mm/transparent_hugepage/defrag`
+
+[always] madvise never
+
+关闭命令：
+
+`# echo never > /sys/kernel/mm/transparent_hugepage/defrag`
+
+可能还有第五个：WARNING: soft rlimits too low. rlimits set to 1024 processes, 64000 files. Number of processes should be at least 32000
+
+设置ulimit
+`# vi /etc/security/limits.conf`
+
+```
+mongod soft nofile 64000
+mongod hard nofile 64000
+mongod soft nproc 32000
+mongod hard nproc 32000
+```
+
+重启mongodb
+
+`# service mongod restart `
+
+就不会报这个warning了
+
+#### （3）mongodb的访问控制
 一般我们在 Linux 上配置 MongoDB 都是为了远程连接使用的，所以在这里还需要配置一下 MongoDB 的远程连接和用户名密码，现在进入 MongoDB 命令行：
 
 `mongo --port 27017`
@@ -270,7 +321,7 @@ local  0.000GB
 ```
 
 这样远程连接和权限认证就配置完成了。
-#### （3）修改默认存储路径
+#### （4）修改默认存储路径
 首先，停止 MongoDB
 
 `sudo systemctl stop mongod.service`
