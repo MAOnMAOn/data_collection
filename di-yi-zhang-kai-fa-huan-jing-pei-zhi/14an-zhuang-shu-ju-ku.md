@@ -206,7 +206,7 @@ sudo systemctl stop mongod
 sudo systemctl reload mongod
 ```
 
-#### （2）mongodb的相关配置
+#### （2）mongodb的访问控制
 一般我们在 Linux 上配置 MongoDB 都是为了远程连接使用的，所以在这里还需要配置一下 MongoDB 的远程连接和用户名密码，现在进入 MongoDB 命令行：
 
 `mongo --port 27017`
@@ -242,7 +242,8 @@ net:
   bindIp: 0.0.0.0
 ```
 
-这样配置后 MongoDB 可被远程访问。
+同时，记得在防火墙开放相应的端口。这样配置后 MongoDB 可被远程访问。
+
 另外还需要添加如下权限认证配置，直接添加如下内容到配置文件：
 
 ```
@@ -269,8 +270,27 @@ local  0.000GB
 ```
 
 这样远程连接和权限认证就配置完成了。
+#### （3）修改默认存储路径
+首先，停止 MongoDB
 
-#### （3）mongodb的可视化工具
+`sudo systemctl stop mongod.service`
+
+然后，复制默认路径到新位置(/var/lib/mongo 为 mongodb 默认数据路径)，一并进行文件备份
+
+```
+rsync -av /var/lib/mongo /data/lib/mongo/
+sudo mv /var/lib/mongo /var/lib/mongo.bak
+```
+
+修改配置文件(sudo vim /etc/mongod.conf)，把文件中的dbPath改为
+
+`dbPath: /data/lib/mongo`
+
+最后启动 MongoDB
+
+`sudo systemctl start mongod.service`
+
+#### （5）mongodb的可视化工具
 
 在这里推荐一个可视化工具 RoboMongo/Robo 3T，使用简单，功能强大，官方网站：https://robomongo.org/， 三大平台都有支持，下载链接：https://robomongo.org/download。
 
