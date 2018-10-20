@@ -341,7 +341,33 @@ sudo mv /var/lib/mongo /var/lib/mongo.bak
 
 `sudo systemctl start mongod.service`
 
-#### （5）mongodb的可视化工具
+#### （5）密码重置
+当出现遗忘密码的情形时，可以通过如下方法重置密码：
+
+```
+sudo vim /etc/mongodb.conf        # 修改 mongodb 的security 配置，将 auth = true 注释掉，或者改成 false
+sudo systemctl start mongod.service      # 重启 mongodb 服务
+```
+
+然后，运行客户端（也可以去mongodb安装目录下运行这个）
+
+`mongo`                         
+
+```
+use admin                      # 切换到系统帐户表
+db.system.users.find()         # 查看当前帐户（密码有加密过）
+db.system.users.remove({})     # 删除所有帐户
+db.addUser('admin','password') # 添加新帐户
+```
+
+最后：
+
+```
+sudo vim /etc/mongodb.conf          # 修改 mongodb 的security 配置，恢复 auth = true
+sudo systemctl start mongod.service      # 重启 mongodb 服务
+```
+
+#### （6）mongodb的可视化工具
 
 在这里推荐一个可视化工具 RoboMongo/Robo 3T，使用简单，功能强大，官方网站：https://robomongo.org/， 三大平台都有支持，下载链接：https://robomongo.org/download。
 
